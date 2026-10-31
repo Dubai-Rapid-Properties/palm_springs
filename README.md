@@ -19,3 +19,10 @@ UTM parameters (`utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_
 
 ## Deploy
 Upload `index.html` to any static host (GitHub Pages, Netlify, Vercel, cPanel).
+
+## Images
+`images/` holds every image the page uses.
+- `ps-*.webp`: representative Palm Springs renders, supplied by a partner (dnkre.com).
+- `sheikh-zayed-road.webp`, `lounge.webp`, `bedroom.webp`: Unsplash photos (Unsplash License).
+
+When Nakheel releases official renders, replace these files and keep the same names. The page already labels all imagery as representative.

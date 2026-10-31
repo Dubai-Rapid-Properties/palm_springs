@@ -8,6 +8,7 @@
 <meta property="og:title" content="Palm Springs by Nakheel | Villas & Townhouses from AED 3.8M">
 <meta property="og:description" content="An upcoming villa and townhouse community right below Palm Jebel Ali. Register for priority access before the public launch.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://dubai-rapid-properties.github.io/palm_springs/images/ps-hero-aerial.webp">
 <meta name="theme-color" content="#fbf8f2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -219,6 +220,59 @@ footer{border-top:1px solid var(--line);padding:56px 0 120px;color:var(--ink-3);
 .mcta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(251,248,242,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);gap:10px}
 .mcta .btn{flex:1;padding:14px 10px;font-size:.74rem}
 
+/* imagery */
+.hero-media{position:relative}
+.hero-img{border-radius:22px;overflow:hidden;aspect-ratio:5/4.4;box-shadow:0 40px 80px -40px rgba(90,64,38,.55)}
+.hero-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.04);animation:kb 18s ease-out forwards}
+@keyframes kb{to{transform:scale(1)}}
+.hero-float{position:absolute;left:-28px;bottom:34px;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:16px 20px;display:grid;gap:4px;box-shadow:0 20px 40px -24px rgba(90,64,38,.5)}
+.hero-float .eyebrow{font-size:.6rem}
+.hero-float strong{font-family:var(--serif);font-weight:500;font-size:1.35rem;line-height:1.2}
+.hero-float span:last-child{font-size:.82rem;color:var(--ink-2)}
+.img-note{position:absolute;right:14px;bottom:12px;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.banner{position:relative;padding:0;height:min(62vh,560px);overflow:hidden;display:flex;align-items:flex-end}
+.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,8,0) 30%,rgba(20,14,8,.7))}
+.banner-txt{position:relative;z-index:1;padding-bottom:56px;color:#fff}
+.banner-txt .eyebrow{color:var(--gold-2)}
+.banner-txt h2{margin-top:12px;color:#fff}
+.banner-txt h2 em{color:var(--gold-2)}
+.unit-img{margin:-38px -36px 4px;aspect-ratio:16/10;overflow:hidden;position:relative}
+.unit-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.unit:hover .unit-img img{transform:scale(1.04)}
+.unit-img figcaption,.gallery figcaption{position:absolute;left:14px;bottom:12px;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.gallery{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:260px 260px;gap:16px}
+.gallery figure{position:relative;overflow:hidden;border-radius:var(--r)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.gallery figure:hover img{transform:scale(1.04)}
+.gallery figcaption{font-size:.68rem;bottom:14px;left:16px}
+.g1{grid-row:span 2}.g2{grid-column:span 2}
+@media (max-width:980px){
+  .hero-media{order:-1;max-width:620px;margin:0 auto;width:100%}
+  .hero-float{left:12px;bottom:12px}
+}
+@media (max-width:640px){
+  .unit-img{margin:-30px -26px 4px}
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 160px 160px}
+  .g1{grid-row:auto;grid-column:span 2}.g2{grid-column:span 2}
+  .hero-img{aspect-ratio:4/3.2}
+  .hero-float{padding:12px 14px}.hero-float strong{font-size:1.1rem}
+  .banner{height:420px}
+}
+
+.docs-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.doc{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 60px -45px rgba(90,64,38,.5);transition:transform .3s}
+.doc:hover{transform:translateY(-4px)}
+.doc figure{aspect-ratio:3/2;overflow:hidden;position:relative;background:var(--bg-2)}
+.doc img{width:100%;height:100%;object-fit:cover}
+.doc>div{padding:24px 28px 28px;display:grid;gap:6px}
+.doc h3{font-size:1.9rem}
+.doc-cta{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.locked::after{content:"";position:absolute;inset:0;background:rgba(251,248,242,.35)}
+.lock{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;z-index:1;display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;padding:13px 22px;border-radius:999px;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase}
+.lock svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:1.6}
+@media (max-width:640px){.docs-grid{grid-template-columns:1fr}}
+
 /* reveal */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
 .rv.in{opacity:1;transform:none}
@@ -226,7 +280,6 @@ footer{border-top:1px solid var(--line);padding:56px 0 120px;color:var(--ink-3);
 @media (max-width:980px){
   .hero-grid,.loc-grid,.reg-grid{grid-template-columns:1fr}
   .hero{padding-top:110px}
-  .hero-map{order:-1;max-width:560px;margin:0 auto -10px;width:100%}
   .num-grid{grid-template-columns:1fr}
   .ben-grid{grid-template-columns:1fr 1fr}
   .strip .wrap{grid-template-columns:1fr 1fr}
@@ -290,8 +343,47 @@ footer{border-top:1px solid var(--line);padding:56px 0 120px;color:var(--ink-3);
       </div>
     </div>
 
-    <div class="hero-map rv">
-      <!-- Schematic map — not to scale -->
+    <div class="hero-media rv">
+      <figure class="hero-img">
+        <img src="images/ps-hero-aerial.webp" alt="Aerial view of a villa and townhouse community at sunset, with Palm Jebel Ali on the horizon" width="1674" height="940" fetchpriority="high">
+      </figure>
+      <div class="hero-float">
+        <span class="eyebrow">Location</span>
+        <strong>Right below Palm Jebel Ali</strong>
+        <span>Sheikh Zayed Road · ~15 min to DWC</span>
+      </div>
+      <span class="img-note">Representative imagery</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <div class="stat"><small>Starting price</small><strong>AED <span>3.8M</span></strong></div>
+    <div class="stat"><small>Bedrooms</small><strong>3 – 5 <span>BR</span></strong></div>
+    <div class="stat"><small>Expected sizes from</small><strong>~2,000 <span>sqft</span></strong></div>
+    <div class="stat"><small>Status</small><strong>Pre-<span>launch</span></strong></div>
+  </div>
+</div>
+
+<!-- LOCATION -->
+<section id="location">
+  <div class="wrap loc-grid">
+    <div class="rv">
+      <span class="eyebrow">The Location</span>
+      <h2 style="margin-top:14px">Right in the <em>middle</em> of it all</h2>
+      <p class="lead" style="margin-top:20px">Palm Springs sits on Dubai's southern corridor, between Palm Jebel Ali and one of the world's biggest trade and logistics hubs. The port, the rail network, the free zone, Expo City and the new airport are all minutes away, along with the people who will work there.</p>
+      <div class="chips"><span class="chip">Port</span><span class="chip">Rail</span><span class="chip">Airport</span><span class="chip">Free Zone</span><span class="chip">Expo</span></div>
+      <ul class="near">
+        <li><span><svg viewBox="0 0 24 24"><path d="M3 18c3-2 6-2 9 0s6 2 9 0M6 14l1-6h10l1 6M12 8V3"/></svg>Palm Jebel Ali</span><b>Next door</b></li>
+        <li><span><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V10l5 3V10l5 3V6h4v14"/></svg>Jebel Ali Port &amp; JAFZA</span><b>Minutes</b></li>
+        <li><span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>Expo City Dubai</span><b>Minutes</b></li>
+        <li><span><svg viewBox="0 0 24 24"><path d="M2 13l20-3M13 10L9 2M13 11l-4 9M19 10l3-4"/></svg>Al Maktoum Intl (DWC)</span><b>~15 min</b></li>
+      </ul>
+    </div>
+    <div class="map-card rv">
+      <span class="tag">Dubai South Corridor</span>
       <svg class="map" viewBox="0 0 600 460" role="img" aria-label="Schematic map showing Palm Springs right below Palm Jebel Ali on Sheikh Zayed Road">
         <defs>
           <radialGradient id="vig" cx="50%" cy="45%" r="70%"><stop offset="70%" stop-color="#fbf8f2" stop-opacity="0"/><stop offset="100%" stop-color="#fbf8f2" stop-opacity=".9"/></radialGradient>
@@ -343,35 +435,12 @@ footer{border-top:1px solid var(--line);padding:56px 0 120px;color:var(--ink-3);
   </div>
 </section>
 
-<!-- STATS STRIP -->
-<div class="strip">
-  <div class="wrap">
-    <div class="stat"><small>Starting price</small><strong>AED <span>3.8M</span></strong></div>
-    <div class="stat"><small>Bedrooms</small><strong>3 – 5 <span>BR</span></strong></div>
-    <div class="stat"><small>Expected sizes from</small><strong>~2,000 <span>sqft</span></strong></div>
-    <div class="stat"><small>Status</small><strong>Pre-<span>launch</span></strong></div>
-  </div>
-</div>
-
-<!-- LOCATION -->
-<section id="location">
-  <div class="wrap loc-grid">
-    <div class="rv">
-      <span class="eyebrow">The Location</span>
-      <h2 style="margin-top:14px">Right in the <em>middle</em> of it all</h2>
-      <p class="lead" style="margin-top:20px">Palm Springs sits on Dubai's southern corridor, between Palm Jebel Ali and one of the world's biggest trade and logistics hubs. The port, the rail network, the free zone, Expo City and the new airport are all minutes away, along with the people who will work there.</p>
-      <div class="chips"><span class="chip">Port</span><span class="chip">Rail</span><span class="chip">Airport</span><span class="chip">Free Zone</span><span class="chip">Expo</span></div>
-      <ul class="near">
-        <li><span><svg viewBox="0 0 24 24"><path d="M3 18c3-2 6-2 9 0s6 2 9 0M6 14l1-6h10l1 6M12 8V3"/></svg>Palm Jebel Ali</span><b>Next door</b></li>
-        <li><span><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V10l5 3V10l5 3V6h4v14"/></svg>Jebel Ali Port &amp; JAFZA</span><b>Minutes</b></li>
-        <li><span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>Expo City Dubai</span><b>Minutes</b></li>
-        <li><span><svg viewBox="0 0 24 24"><path d="M2 13l20-3M13 10L9 2M13 11l-4 9M19 10l3-4"/></svg>Al Maktoum Intl (DWC)</span><b>~15 min</b></li>
-      </ul>
-    </div>
-    <div class="map-card rv">
-      <span class="tag">Dubai South Corridor</span>
-      <svg class="map" viewBox="0 0 600 460" aria-hidden="true"><use href="#none"/></svg>
-    </div>
+<!-- BANNER -->
+<section class="banner">
+  <img src="images/sheikh-zayed-road.webp" alt="Sheikh Zayed Road and the Dubai skyline at sunset" loading="lazy" width="2000" height="900">
+  <div class="wrap banner-txt rv">
+    <span class="eyebrow">On Sheikh Zayed Road</span>
+    <h2>Connected to the whole <em>city</em></h2>
   </div>
 </section>
 
@@ -421,6 +490,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 120px;color:var(--ink-3);
     </div>
     <div class="units-grid">
       <div class="unit rv">
+        <figure class="unit-img"><img src="images/ps-townhouses.webp" alt="Row of contemporary townhouses with landscaped gardens" loading="lazy" width="1004" height="627"><figcaption>Representative</figcaption></figure>
         <svg class="icon" viewBox="0 0 64 64"><path d="M4 56V30L18 16l14 14v26M32 56V30l14-14 14 14v26M4 56h56M13 56V42h10v14M41 56V42h10v14"/></svg>
         <h3>3 &amp; 4<small>BR</small></h3>
         <div class="type">Townhouses</div>
@@ -432,6 +502,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 120px;color:var(--ink-3);
         <a href="#register" class="btn js-pick" data-unit="Townhouse (3-4 BR)">Request Floor Plans</a>
       </div>
       <div class="unit rv">
+        <figure class="unit-img"><img src="images/ps-villa.webp" alt="Standalone villa with private pool at sunset" loading="lazy" width="1003" height="627"><figcaption>Representative</figcaption></figure>
         <svg class="icon" viewBox="0 0 64 64"><path d="M4 56V28L32 8l28 20v28M4 56h56M24 56V38h16v18M10 32h10v8H10zM44 32h10v8H44z"/></svg>
         <h3>4 &amp; 5<small>BR</small></h3>
         <div class="type">Standalone Villas</div>
@@ -444,6 +515,23 @@ footer{border-top:1px solid var(--line);padding:56px 0 120px;color:var(--ink-3);
       </div>
     </div>
     <p class="note rv">Unit sizes &amp; masterplan not yet announced</p>
+  </div>
+</section>
+
+<!-- LIFESTYLE -->
+<section class="lifestyle" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">The Lifestyle</span>
+      <h2>Space to <em>live</em>, inside and out</h2>
+    </div>
+    <div class="gallery">
+      <figure class="g1 rv"><img src="images/ps-interior.webp" alt="Open-plan living room opening onto a pool terrace at sunset" loading="lazy"><figcaption>Indoor–outdoor living</figcaption></figure>
+      <figure class="g2 rv"><img src="images/ps-villas-exterior.webp" alt="Contemporary villas with private pools and palm-lined streets" loading="lazy"><figcaption>Green, family-friendly streets</figcaption></figure>
+      <figure class="g3 rv"><img src="images/lounge.webp" alt="Double-height lounge with natural light" loading="lazy"><figcaption>Natural light</figcaption></figure>
+      <figure class="g4 rv"><img src="images/bedroom.webp" alt="Calm master bedroom" loading="lazy"><figcaption>Private retreats</figcaption></figure>
+    </div>
+    <p class="note rv">All imagery is representative or illustrative only. Official Palm Springs renders will be shared at launch.</p>
   </div>
 </section>
 
@@ -493,6 +581,28 @@ footer{border-top:1px solid var(--line);padding:56px 0 120px;color:var(--ink-3);
       <div class="ben rv"><span class="n">02</span><h3>Launch pricing</h3><p>Launch-phase prices are typically the lowest a project will see.</p></div>
       <div class="ben rv"><span class="n">03</span><h3>Priority units</h3><p>Better chance at your preferred unit type, plot and orientation.</p></div>
       <div class="ben rv"><span class="n">04</span><h3>Expert guidance</h3><p>Independent advice on payment plans, ROI and the EOI process.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BROCHURE -->
+<section class="docs" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv" style="text-align:center;align-items:center">
+      <span class="eyebrow">Launch Pack</span>
+      <h2>Brochure &amp; <em>floor plans</em></h2>
+      <p class="lead">Registered buyers get the official brochure, floor plans and payment plan as soon as they are released.</p>
+    </div>
+    <div class="docs-grid">
+      <a href="#register" class="doc rv js-pick" data-unit="Both / Not sure yet">
+        <figure><img src="images/ps-brochure.webp" alt="Preview of the project brochure" loading="lazy" width="1200" height="800"></figure>
+        <div><span class="eyebrow">PDF · On release</span><h3>Project Brochure</h3><span class="doc-cta">Request the brochure →</span></div>
+      </a>
+      <a href="#register" class="doc rv js-pick" data-unit="Both / Not sure yet">
+        <figure class="locked"><img src="images/ps-floorplan-blur.webp" alt="Blurred floor plan preview" loading="lazy" width="1000" height="667">
+          <span class="lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Unlock floor plans</span></figure>
+        <div><span class="eyebrow">Townhouses &amp; villas</span><h3>Floor Plans</h3><span class="doc-cta">Get floor plans first →</span></div>
+      </a>
     </div>
   </div>
 </section>
@@ -630,10 +740,6 @@ document.querySelectorAll(".js-tel").forEach(a => a.href = "tel:" + CONFIG.phone
 document.querySelectorAll(".js-tel-label").forEach(s => s.textContent = CONFIG.phone);
 document.querySelectorAll(".js-agency").forEach(s => s.textContent = "© " + new Date().getFullYear() + " " + CONFIG.agency);
 
-// Copy hero map into location section
-const heroMap = document.querySelector(".hero-map svg");
-const slot = document.querySelector(".map-card svg");
-if (heroMap && slot) slot.replaceWith(heroMap.cloneNode(true));
 
 // Nav background on scroll
 const nav = document.getElementById("nav");
