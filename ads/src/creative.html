@@ -199,10 +199,12 @@ const MAP = `<svg class="map" viewBox="0 0 600 460" role="img" aria-label="Schem
 const q = new URLSearchParams(location.search);
 const k = q.get("k") || "A", s = q.get("s") || "s1";
 const IMG = "../../images/";
-const LW = `<img class="logo" src="${IMG}drp-logo-white.png">`, LD = `<img class="logo" src="${IMG}drp-logo-dark.png">`;
+const HQ = q.get("hq") === "1";
+const HERO = HQ ? "hq-hero.png" : IMG + "ps-hero-aerial.webp";
+const LW = `<img class="logo" src="${HQ ? "hq-logo-white.png" : IMG + "drp-logo-white.png"}">`, LD = `<img class="logo" src="${IMG}drp-logo-dark.png">`;
 const arrow = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
 const T = {
-A: () => `<img class="bg" src="${IMG}ps-hero-aerial.webp">
+A: () => `<img class="bg" src="${HERO}">
  <div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div><div class="spacer"></div>
   <span class="eyebrow">Nakheel · Upcoming Launch</span>
   <h1>Palm Springs</h1>
