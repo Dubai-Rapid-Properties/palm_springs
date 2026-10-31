@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Palm Springs Ad Creative</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f5f3ef;--sand:#ede4d9;--ink:#111;--ink2:#4a4a4a;--ink3:#8a857d;--or:#f16622;--or2:#c0511b;--line:#d6cfc4;
+  --serif:"Playfair Display",Georgia,serif;--sans:"Inter",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#000}
+#c{position:relative;width:1080px;overflow:hidden;font-family:var(--sans);-webkit-font-smoothing:antialiased}
+.B,.D{color:var(--ink)}
+.s1{height:1080px}.s916{height:1920px}
+.pad{position:absolute;inset:0;padding:64px 70px;display:flex;flex-direction:column}
+.s916 .pad{padding:230px 76px 330px}
+.logo{height:74px;width:auto;align-self:flex-start;flex:none}
+.s916 .logo{height:84px}
+.eyebrow{display:inline-flex;align-items:center;gap:18px;font-size:22px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--or)}
+.eyebrow::before{content:"";width:46px;height:2px;background:var(--or)}
+h1{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+.fine{font-size:17px;letter-spacing:.06em;color:rgba(255,255,255,.7)}
+.fine.dk{color:var(--ink3)}
+.cta{display:inline-flex;align-items:center;gap:16px;background:var(--or2);color:#fff;font-weight:700;font-size:26px;letter-spacing:.16em;text-transform:uppercase;padding:28px 40px}
+.cta.blk{background:var(--ink)}
+.price{border-left:4px solid var(--or);padding-left:26px}
+.price small{display:block;font-size:20px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;opacity:.85}
+.price strong{display:block;font-family:var(--serif);font-weight:400;font-size:84px;line-height:1.1}
+.tag{display:inline-block;background:var(--or2);color:#fff;font-size:20px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:14px 22px}
+.top{display:flex;justify-content:space-between;align-items:flex-start}
+.spacer{flex:1}
+img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* ===== A: HERO ===== */
+.A{color:#fff;background:#111}
+.A::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,8,.55) 0%,rgba(8,8,8,0) 22%,rgba(8,8,8,.15) 42%,rgba(8,8,8,.86) 78%,rgba(8,8,8,.94) 100%)}
+.A .pad{z-index:1}
+.A h1{font-size:150px;margin:22px 0 14px}
+.A .sub{font-size:34px;color:rgba(255,255,255,.92);line-height:1.35}
+.A .price{margin:34px 0 38px}
+.A .row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.s1.A h1{font-size:128px;margin:16px 0 10px}
+.s1.A .sub{font-size:30px}
+.s1.A .price{margin:24px 0 28px}
+.s1.A .price strong{font-size:70px}
+.s916.A h1{font-size:170px}
+
+/* ===== B: LOCATION ===== */
+.B{background:var(--paper)}
+.B h1{font-size:88px;margin:20px 0 0}
+.B .map{margin:40px -70px 0;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.B .map svg{width:100%;height:auto;display:block}
+.B ul{list-style:none;margin-top:30px}
+.B li{display:flex;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--line);font-size:28px;color:var(--ink2)}
+.B li b{font-family:var(--serif);font-weight:400;color:var(--ink);font-size:32px}
+.B .bar{margin:0 -70px -64px;background:var(--ink);color:#fff;padding:36px 70px;display:flex;justify-content:space-between;align-items:center}
+.B .bar span{font-size:24px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.B .bar strong{font-family:var(--serif);font-weight:400;font-size:52px;color:var(--or)}
+.s1.B h1{font-size:64px}
+.s1.B h1 br{display:none}
+.s1.B .map{margin-top:26px}
+.s1.B .map svg{height:610px;width:100%}
+.s1.B ul{display:none}
+.s916.B .map{margin-left:-76px;margin-right:-76px}
+.s916.B .bar{margin:0 -76px;padding:40px 76px}
+.s916.B h1{font-size:104px}
+
+/* map recolor */
+.map .sea{fill:#e9e7e3}.map .land{fill:#fafaf9}.map .coast{fill:none;stroke:#b8b3ab;stroke-width:1.4}
+.map .road{fill:none;stroke:#dedad3;stroke-width:1.5}.map .szr{fill:none;stroke:#f16622;stroke-width:3.4;stroke-linecap:round}
+.map .palm{fill:none;stroke:#a7a199;stroke-width:1.5}.map .plot{fill:rgba(241,102,34,.4);stroke:#c0511b;stroke-width:2}
+.map .plot-glow{fill:rgba(241,102,34,.35);filter:blur(12px)}.map .lbl{font:600 9px var(--sans);letter-spacing:.16em;fill:#444}
+.map .lbl-chip{fill:#fff;stroke:#cfc9c0}.map .lbl-script{font:italic 500 18px var(--serif);fill:#c0511b}
+.map .link{fill:none;stroke:#c0511b;stroke-width:1.2;stroke-dasharray:4 5;opacity:.7}
+.map .node circle{fill:#fff;stroke:#111;stroke-width:1.2}.map .node path{stroke:#111;fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
+.map .rail{fill:none;stroke:#a7a199;stroke-width:1.4;stroke-dasharray:6 5}
+
+/* ===== C: HOMES ===== */
+.C{background:#111;color:#fff}
+.C h1{font-size:96px;margin:20px 0 34px}
+.C .pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;flex:1;min-height:0}
+.C figure{position:relative;overflow:hidden;display:flex;flex-direction:column;background:#1b1b1b}
+.C figure img{width:100%;flex:1;min-height:0;object-fit:cover}
+.C figcaption{padding:24px 26px 26px}
+.C figcaption small{display:block;font-size:19px;letter-spacing:.2em;text-transform:uppercase;color:var(--or);font-weight:600}
+.C figcaption strong{display:block;font-family:var(--serif);font-weight:400;font-size:46px;margin-top:6px;line-height:1.1}
+.C .foot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:34px;gap:20px}
+.C .price strong{font-size:68px}
+.s1.C h1{font-size:76px;margin:14px 0 26px}
+.s1.C figcaption strong{font-size:38px}
+.s1.C .price strong{font-size:58px}
+.s1.C .foot{margin-top:26px}
+.s916.C .pair{grid-template-columns:1fr;gap:18px}
+.s916.C h1{font-size:110px}
+
+/* ===== D: LAUNCH PACK ===== */
+.D{background:var(--paper)}
+.D .img{margin:36px -70px 0;flex:1;min-height:0;position:relative;overflow:hidden}
+.D .img img{width:100%;height:100%;object-fit:cover}
+.D h1{font-size:84px;margin-top:20px}
+.D ul{list-style:none;margin:30px 0 34px;display:grid;gap:14px}
+.D li{display:flex;gap:18px;align-items:center;font-size:30px;color:var(--ink2)}
+.D li::before{content:"";width:14px;height:14px;background:var(--or);flex:none}
+.D .row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.s1.D h1{font-size:68px}
+.s1.D ul{margin:22px 0 26px;gap:8px}
+.s1.D li{font-size:25px}
+.s916.D .img{margin-left:-76px;margin-right:-76px}
+.s916.D h1{font-size:100px}
+
+/* ===== U: single unit (carousel) ===== */
+.U{color:#fff;background:#111}
+.U::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,8,0) 45%,rgba(8,8,8,.88) 100%)}
+.U .pad{z-index:1}
+.U small{font-size:22px;letter-spacing:.22em;text-transform:uppercase;color:var(--or);font-weight:700}
+.U h1{font-size:104px;margin:12px 0 14px}
+.U p{font-size:32px;color:rgba(255,255,255,.9)}
+
+/* ===== E: CTA card ===== */
+.E{background:var(--or2);color:#fff}
+.E h1{font-size:110px;margin:30px 0 24px}
+.E p{font-size:34px;line-height:1.4;color:rgba(255,255,255,.92);max-width:20ch}
+.E .cta{background:#fff;color:var(--ink)}
+.E .fine{color:rgba(255,255,255,.8)}
+
+/* ===== 16:9 landscape ===== */
+#c.s169{width:1920px;height:1080px}
+.s169 .pad{padding:70px 96px}
+.s169.A::after{background:linear-gradient(90deg,rgba(8,8,8,.88) 0%,rgba(8,8,8,.6) 45%,rgba(8,8,8,.05) 75%),linear-gradient(180deg,rgba(8,8,8,.45) 0%,rgba(8,8,8,0) 25%)}
+.s169.A .pad>*:not(.top){max-width:1000px}
+.s169.A h1{font-size:150px}
+.s169 .grid2{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;flex:1;min-height:0;margin-top:40px}
+.s169 .col{display:flex;flex-direction:column;min-height:0}
+.s169.B .map{margin:0;border:1px solid var(--line);align-self:center}
+.s169.B h1{font-size:96px}
+.s169.B ul{margin-top:34px}
+.s169.B .pbox{margin-top:auto;background:var(--ink);color:#fff;padding:30px 34px;display:flex;justify-content:space-between;align-items:center}
+.s169.B .pbox span{font-size:22px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.s169.B .pbox strong{font-family:var(--serif);font-weight:400;font-size:50px;color:var(--or)}
+.s169.C .pair{height:100%}
+.s169.C h1{font-size:104px;margin:20px 0 30px}
+.s169.C .col .price{margin-top:auto;margin-bottom:34px}
+.s169.D .img{margin:0;height:100%}
+.s169.D h1{font-size:90px}
+.s169.U h1{font-size:120px}
+.s169.E .pad{padding:90px 110px}
+.s169.E h1{font-size:130px}
+
+.note{position:absolute;right:22px;bottom:16px;z-index:2;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.note.dk{color:var(--ink3)}
+</style>
+</head>
+<body>
+<div id="c"></div>
+<script>
+const MAP = `<svg class="map" viewBox="0 0 600 460" role="img" aria-label="Schematic map showing Palm Springs right below Palm Jebel Ali on Sheikh Zayed Road">
+        
+        <rect class="sea" width="600" height="460"/>
+        <path class="land" d="M0 330 C80 300 140 262 210 236 C300 200 360 160 440 118 C510 82 560 50 600 30 L600 460 L0 460Z"/>
+        <path class="coast" d="M0 330 C80 300 140 262 210 236 C300 200 360 160 440 118 C510 82 560 50 600 30"/>
+        <!-- Palm Jebel Ali (stylised) -->
+        <g class="palm" transform="translate(168 150)">
+          <path d="M-92 18 A96 74 0 1 1 92 18"/>
+          <path d="M-100 26 A104 82 0 1 1 100 26" opacity=".55"/>
+          <path d="M0 72 L0 6"/>
+          <path d="M0 8 C-20 -6 -52 -12 -74 -6 M0 8 C-14 -14 -36 -32 -58 -38 M0 8 C-8 -18 -18 -44 -30 -56 M0 8 C0 -20 0 -46 0 -62 M0 8 C8 -18 18 -44 30 -56 M0 8 C14 -14 36 -32 58 -38 M0 8 C20 -6 52 -12 74 -6"/>
+          <path d="M0 72 L0 96"/>
+        </g>
+        <!-- Port basins -->
+        <path class="coast" d="M290 205 l14 -30 l26 -10 M312 196 l12 -26 M334 186 l10 -24 M356 176 l8 -22"/>
+        <!-- inland roads -->
+        <path class="road" d="M40 420 C160 380 260 330 360 270 C430 228 520 170 600 120"/>
+        <path class="road" d="M210 300 L290 440 M330 250 L440 440 M430 200 L560 420 M120 360 L170 460"/>
+        <path class="road" d="M260 330 C320 340 380 320 460 300 L600 260"/>
+        <!-- Etihad Rail (dashed) -->
+        <path class="rail" d="M0 410 C90 370 180 330 250 290"/>
+        <!-- Sheikh Zayed Road -->
+        <path class="szr" d="M0 360 C110 320 170 292 230 268 C320 232 400 186 470 146 C530 112 570 88 600 72"/>
+        <!-- connector links -->
+        <path class="link" d="M216 262 L318 196 M216 262 L388 252 M216 262 L470 312 M216 262 L408 392"/>
+        <!-- Plot -->
+        <ellipse class="plot-glow" cx="214" cy="266" rx="34" ry="22"/>
+        <path class="plot" d="M196 246 L232 236 L244 278 L206 290 Z"/>
+        <!-- nodes -->
+        <g class="node" transform="translate(318 196)"><circle r="13"/><path d="M-6 3 h12 l-2 4 h-8z M0 3 v-9 M-4 -2 h8"/></g>
+        <g class="node" transform="translate(388 252)"><circle r="13"/><path d="M-6 6 v-7 l4 3 v-3 l4 3 v-6 h4 v10z"/></g>
+        <g class="node" transform="translate(470 312)"><circle r="13"/><circle r="4" style="stroke-width:1.3"/><path d="M0 -8 v2 M0 6 v2 M-8 0 h2 M6 0 h2 M-5.6 -5.6 l1.4 1.4 M4.2 4.2 l1.4 1.4 M-5.6 5.6 l1.4 -1.4 M4.2 -4.2 l1.4 -1.4"/></g>
+        <g class="node" transform="translate(408 392)"><circle r="13"/><path d="M-7 1 L7 -1 M1 -1 L-2 -7 M1 0 L-2 7 M5 -1 l2 -3"/></g>
+        <!-- labels -->
+        <g><rect class="lbl-chip" x="104" y="64" width="128" height="22" rx="11"/><text class="lbl" x="168" y="79" text-anchor="middle">PALM JEBEL ALI</text></g>
+        <g><rect class="lbl-chip" x="146" y="304" width="136" height="32" rx="16" style="stroke:#c0511b"/><text class="lbl-script" x="214" y="326" text-anchor="middle">Palm Springs</text></g>
+        <text class="lbl" x="336" y="186">JEBEL ALI PORT</text>
+        <text class="lbl" x="406" y="248">JAFZA</text>
+        <text class="lbl" x="488" y="316">EXPO CITY</text>
+        <text class="lbl" x="426" y="396">AL MAKTOUM INTL</text>
+        <text class="lbl" x="40" y="398" transform="rotate(-21 40 398)" style="fill:#8a7a66">ETIHAD RAIL</text>
+        <text class="lbl" x="470" y="134" transform="rotate(-29 470 134)" style="fill:#c0511b">SHEIKH ZAYED RD</text>
+      </svg>`;
+const q = new URLSearchParams(location.search);
+const k = q.get("k") || "A", s = q.get("s") || "s1";
+const IMG = "../../images/";
+const LW = `<img class="logo" src="${IMG}drp-logo-white.png">`, LD = `<img class="logo" src="${IMG}drp-logo-dark.png">`;
+const arrow = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
+const T = {
+A: () => `<img class="bg" src="${IMG}ps-hero-aerial.webp">
+ <div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div><div class="spacer"></div>
+  <span class="eyebrow">Nakheel · Upcoming Launch</span>
+  <h1>Palm Springs</h1>
+  <p class="sub">Villas &amp; Townhouses · Right below Palm Jebel Ali</p>
+  <div class="price"><small>Expected from</small><strong>AED 3.8M*</strong></div>
+  <div class="row"><span class="cta">Register before launch ${arrow}</span></div>
+  <p class="fine" style="margin-top:22px">*Expected pricing, subject to change · Representative imagery</p>
+ </div>`,
+B: () => `<div class="pad"><div class="top">${LD}<span class="tag">Pre-launch</span></div>
+  <span class="eyebrow" style="margin-top:46px;color:var(--or2)">Palm Springs by Nakheel</span>
+  <h1>Right below<br>Palm Jebel Ali</h1>
+  <div class="map">${MAP}</div>
+  <ul><li><span>Palm Jebel Ali</span><b>Next door</b></li><li><span>Sheikh Zayed Road</span><b>Direct access</b></li><li><span>Al Maktoum Airport (DWC)</span><b>~15 min</b></li></ul>
+  <div class="spacer"></div>
+  <div class="bar"><span>Villas &amp; Townhouses</span><strong>From AED 3.8M*</strong></div>
+ </div>`,
+C: () => `<div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div>
+  <span class="eyebrow" style="margin-top:44px">Palm Springs by Nakheel</span>
+  <h1>Townhouses &amp; Villas</h1>
+  <div class="pair">
+   <figure><img src="${IMG}ps-townhouses.webp"><figcaption><small>Townhouses</small><strong>3 &amp; 4 BR</strong></figcaption></figure>
+   <figure><img src="${IMG}ps-villa.webp"><figcaption><small>Standalone villas</small><strong>4 &amp; 5 BR</strong></figcaption></figure>
+  </div>
+  <div class="foot"><div class="price"><small>Expected from</small><strong>AED 3.8M*</strong></div><span class="cta">Register ${arrow}</span></div>
+ </div><span class="note">Representative imagery</span>`,
+D: () => `<div class="pad"><div class="top">${LD}<span class="tag">Pre-launch</span></div>
+  <span class="eyebrow" style="margin-top:44px;color:var(--or2)">Palm Springs by Nakheel</span>
+  <h1>Get the brochure &amp; floor plans first</h1>
+  <div class="img"><img src="${IMG}ps-brochure.webp"></div>
+  <ul><li>Prices &amp; payment plan before launch</li><li>Priority on unit, plot &amp; orientation</li><li>Free, no obligation</li></ul>
+  <div class="row"><span class="cta">Register now ${arrow}</span><div class="price" style="border-color:var(--or2)"><small style="color:var(--ink3)">From</small><strong style="font-size:56px">AED 3.8M*</strong></div></div>
+ </div><span class="note dk">Representative imagery</span>`,
+U1: () => `<img class="bg" src="${IMG}ps-townhouses.webp"><div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div><div class="spacer"></div>
+  <small>Townhouses</small><h1>3 &amp; 4 Bedrooms</h1><p>Expected from AED 3.8M* · ~2,000 sqft</p></div><span class="note">Representative imagery</span>`,
+U2: () => `<img class="bg" src="${IMG}ps-villa.webp"><div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div><div class="spacer"></div>
+  <small>Standalone villas</small><h1>4 &amp; 5 Bedrooms</h1><p>Private pools · up to ~AED 9M*</p></div><span class="note">Representative imagery</span>`,
+U3: () => `<img class="bg" src="${IMG}ps-interior.webp"><div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div><div class="spacer"></div>
+  <small>The lifestyle</small><h1>Indoor–outdoor living</h1><p>Contemporary homes by Nakheel</p></div><span class="note">Representative imagery</span>`,
+E: () => `<div class="pad">${LW}<div class="spacer"></div>
+  <span class="eyebrow" style="color:#fff">Palm Springs by Nakheel</span>
+  <h1>Register before launch</h1>
+  <p>Brochure, floor plans &amp; launch prices sent to you first.</p>
+  <div class="spacer"></div>
+  <div><span class="cta">Get priority access ${arrow}</span></div>
+  <p class="fine" style="margin-top:22px">Free · No obligation · D|R|P</p></div>`
+};
+const L = {
+B: () => `<div class="pad"><div class="top">${LD}<span class="tag">Pre-launch</span></div>
+  <div class="grid2"><div class="col">
+   <span class="eyebrow" style="color:var(--or2)">Palm Springs by Nakheel</span>
+   <h1 style="margin-top:20px">Right below<br>Palm Jebel Ali</h1>
+   <ul><li><span>Palm Jebel Ali</span><b>Next door</b></li><li><span>Sheikh Zayed Road</span><b>Direct access</b></li><li><span>Al Maktoum Airport (DWC)</span><b>~15 min</b></li></ul>
+   <div class="pbox"><span>Villas &amp; Townhouses</span><strong>From AED 3.8M*</strong></div>
+  </div><div class="map">${MAP}</div></div></div>`,
+C: () => `<div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div>
+  <div class="grid2" style="grid-template-columns:.8fr 1.4fr"><div class="col">
+   <span class="eyebrow">Palm Springs by Nakheel</span>
+   <h1>Townhouses &amp; Villas</h1>
+   <p style="font-size:30px;color:rgba(255,255,255,.85);line-height:1.4">Right below Palm Jebel Ali, on Sheikh Zayed Road.</p>
+   <div class="price"><small>Expected from</small><strong>AED 3.8M*</strong></div>
+   <div><span class="cta">Register before launch ${arrow}</span></div>
+  </div><div class="pair">
+   <figure><img src="${IMG}ps-townhouses.webp"><figcaption><small>Townhouses</small><strong>3 &amp; 4 BR</strong></figcaption></figure>
+   <figure><img src="${IMG}ps-villa.webp"><figcaption><small>Standalone villas</small><strong>4 &amp; 5 BR</strong></figcaption></figure>
+  </div></div></div><span class="note">Representative imagery</span>`,
+D: () => `<div class="pad"><div class="top">${LD}<span class="tag">Pre-launch</span></div>
+  <div class="grid2" style="grid-template-columns:1fr 1fr"><div class="col">
+   <span class="eyebrow" style="color:var(--or2)">Palm Springs by Nakheel</span>
+   <h1 style="margin-top:20px">Get the brochure &amp; floor plans first</h1>
+   <ul><li>Prices &amp; payment plan before launch</li><li>Priority on unit, plot &amp; orientation</li><li>Free, no obligation</li></ul>
+   <div class="row" style="margin-top:auto"><span class="cta">Register now ${arrow}</span><div class="price" style="border-color:var(--or2)"><small style="color:var(--ink3)">From</small><strong style="font-size:56px">AED 3.8M*</strong></div></div>
+  </div><div class="img"><img src="${IMG}ps-brochure.webp"></div></div></div><span class="note dk">Representative imagery</span>`
+};
+const c = document.getElementById("c");
+const cls = k.startsWith("U") ? "U" : k;
+c.className = `${s} ${cls}`;
+c.innerHTML = (s === "s169" && L[k] ? L[k] : T[k])();
+if (s === "s1") c.querySelectorAll(".map svg").forEach(v => { v.setAttribute("viewBox","0 56 600 356"); v.setAttribute("preserveAspectRatio","xMidYMid slice"); });
+</script>
+</body>
+</html>
