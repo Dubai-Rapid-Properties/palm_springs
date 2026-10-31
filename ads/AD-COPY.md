@@ -50,3 +50,24 @@ Meta fills in `{{ad.name}}` automatically. The landing page captures the UTM val
 - **Audience ideas:** UAE, plus GCC, UK, India and Russia for investors. Interests: real estate investing, luxury real estate, Dubai property, Nakheel / Emaar / DAMAC.
 - **Disclaimer:** Prices are expected or indicative, and the imagery is representative (both are already noted on the creative).
 - **Tracking:** Add your Meta Pixel ID to `index.html` so the `Lead` event fires when the form is submitted.
+
+## Instagram carousel post (4:5)
+Files: `hq/carousel-4x5/carousel-4x5-1.jpg` to `-6.jpg` (2160×2700). Upload them in order 1→6.
+
+**Caption**
+> Nakheel's next launch is coming 🌴
+>
+> Palm Springs: villas & townhouses right below Palm Jebel Ali, on Sheikh Zayed Road.
+>
+> 🏡 3 & 4 BR Townhouses
+> 🏡 4 & 5 BR Standalone Villas
+> 💰 Expected from AED 3.8M*
+> 📍 ~15 min to Al Maktoum Airport (DWC)
+>
+> Want the brochure, floor plans and launch prices before anyone else?
+> 📲 DM us or WhatsApp +971 58 527 3791
+> 🔗 Link in bio
+>
+> *Expected pricing, subject to change. Imagery is representative.
+>
+> #PalmSprings #Nakheel #PalmJebelAli #DubaiRealEstate #DubaiVillas #DubaiTownhouses #OffPlanDubai #DubaiProperty #DubaiInvestment #DRP

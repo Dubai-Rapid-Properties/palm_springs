@@ -11,7 +11,7 @@
 html,body{background:#000}
 #c{position:relative;width:1080px;overflow:hidden;font-family:var(--sans);-webkit-font-smoothing:antialiased}
 .B,.D{color:var(--ink)}
-.s1{height:1080px}.s916{height:1920px}
+.s1{height:1080px}.s45{height:1350px}.s916{height:1920px}
 .pad{position:absolute;inset:0;padding:64px 70px;display:flex;flex-direction:column}
 .s916 .pad{padding:230px 76px 330px}
 .logo{height:74px;width:auto;align-self:flex-start;flex:none}
@@ -149,6 +149,18 @@ img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .th.A::after{background:linear-gradient(180deg,rgba(8,8,8,.5) 0%,rgba(8,8,8,0) 18%,rgba(8,8,8,.45) 36%,rgba(8,8,8,.9) 58%,rgba(8,8,8,.95) 100%)}
 .U::after{background:linear-gradient(180deg,rgba(8,8,8,.35) 0%,rgba(8,8,8,0) 18%,rgba(8,8,8,0) 38%,rgba(8,8,8,.88) 78%,rgba(8,8,8,.92) 100%)!important}
 .eyebrow,.U small{text-shadow:0 1px 10px rgba(0,0,0,.45)}
+/* ===== 4:5 ===== */
+.s45.A::after{background:linear-gradient(180deg,rgba(8,8,8,.5) 0%,rgba(8,8,8,0) 18%,rgba(8,8,8,.45) 40%,rgba(8,8,8,.9) 62%,rgba(8,8,8,.95) 100%)}
+.s45.B h1{font-size:70px}
+.s45.B h1 br{display:none}
+.s45.B .map svg{height:641px;width:100%}
+.s45.B ul{margin-top:14px}
+.s45.B li{padding:11px 0;font-size:26px}
+.s45.B li b{font-size:29px}
+.s45.B .map{margin-top:24px}
+.s45.B ul{margin-top:22px}
+.s45.B li{padding:16px 0}
+.B .map svg.map{margin:0;border:0}
 .note{position:absolute;right:22px;bottom:16px;z-index:2;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)}
 .note.dk{color:var(--ink3)}
 </style>
@@ -220,7 +232,7 @@ A: () => `<img class="bg" src="${HERO}">
  </div>`,
 B: () => `<div class="pad"><div class="top">${LD}<span class="tag">Pre-launch</span></div>
   <span class="eyebrow" style="margin-top:46px;color:var(--or2)">Palm Springs by Nakheel</span>
-  <h1>Right below<br>Palm Jebel Ali</h1>
+  <h1>Right below <br>Palm Jebel Ali</h1>
   <div class="map">${MAP}</div>
   <ul><li><span>Palm Jebel Ali</span><b>Next door</b></li><li><span>Sheikh Zayed Road</span><b>Direct access</b></li><li><span>Al Maktoum Airport (DWC)</span><b>~15 min</b></li></ul>
   <div class="spacer"></div>
@@ -244,9 +256,9 @@ D: () => `<div class="pad"><div class="top">${LD}<span class="tag">Pre-launch</s
  </div><span class="note dk">Representative imagery</span>`,
 U1: () => `<img class="bg" src="${TH}"><div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div><div class="spacer"></div>
   <small>Townhouses</small><h1>3 &amp; 4 Bedrooms</h1><p>Expected from AED 3.8M* · ~2,000 sqft</p></div><span class="note">Representative imagery</span>`,
-U2: () => `<img class="bg" src="${IMG}ps-villa.webp"><div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div><div class="spacer"></div>
+U2: () => `<img class="bg" src="${HQ ? "hq-villa-sq.png" : IMG + "ps-villa.webp"}"><div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div><div class="spacer"></div>
   <small>Standalone villas</small><h1>4 &amp; 5 Bedrooms</h1><p>Private pools · up to ~AED 9M*</p></div><span class="note">Representative imagery</span>`,
-U3: () => `<img class="bg" src="${IMG}ps-interior.webp"><div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div><div class="spacer"></div>
+U3: () => `<img class="bg" src="${HQ ? "hq-interior.png" : IMG + "ps-interior.webp"}"><div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div><div class="spacer"></div>
   <small>The lifestyle</small><h1>Indoor–outdoor living</h1><p>Contemporary homes by Nakheel</p></div><span class="note">Representative imagery</span>`,
 E: () => `<div class="pad">${LW}<div class="spacer"></div>
   <span class="eyebrow" style="color:#fff">Palm Springs by Nakheel</span>
@@ -288,6 +300,7 @@ const cls = k.startsWith("U") ? "U" : k;
 c.className = `${s} ${cls}${BG === "th" ? " th" : ""}`;
 c.innerHTML = (s === "s169" && L[k] ? L[k] : T[k])();
 if (s === "s1") c.querySelectorAll(".map svg").forEach(v => { v.setAttribute("viewBox","0 56 600 356"); v.setAttribute("preserveAspectRatio","xMidYMid slice"); });
+if (s === "s45") c.querySelectorAll(".map svg").forEach(v => v.setAttribute("viewBox","0 56 600 356"));
 </script>
 </body>
 </html>
