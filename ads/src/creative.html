@@ -146,6 +146,9 @@ img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .s169.E .pad{padding:90px 110px}
 .s169.E h1{font-size:130px}
 
+.th.A::after{background:linear-gradient(180deg,rgba(8,8,8,.5) 0%,rgba(8,8,8,0) 18%,rgba(8,8,8,.45) 36%,rgba(8,8,8,.9) 58%,rgba(8,8,8,.95) 100%)}
+.U::after{background:linear-gradient(180deg,rgba(8,8,8,.35) 0%,rgba(8,8,8,0) 18%,rgba(8,8,8,0) 38%,rgba(8,8,8,.88) 78%,rgba(8,8,8,.92) 100%)!important}
+.eyebrow,.U small{text-shadow:0 1px 10px rgba(0,0,0,.45)}
 .note{position:absolute;right:22px;bottom:16px;z-index:2;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)}
 .note.dk{color:var(--ink3)}
 </style>
@@ -200,7 +203,9 @@ const q = new URLSearchParams(location.search);
 const k = q.get("k") || "A", s = q.get("s") || "s1";
 const IMG = "../../images/";
 const HQ = q.get("hq") === "1";
-const HERO = HQ ? "hq-hero.png" : IMG + "ps-hero-aerial.webp";
+const BG = q.get("bg");
+const HERO = BG === "th" ? (HQ ? "hq-townhouses-sq.png" : IMG + "ps-villas-exterior.webp") : (HQ ? "hq-hero.png" : IMG + "ps-hero-aerial.webp");
+const TH = HQ ? "hq-townhouses-sq.png" : IMG + "ps-townhouses.webp";
 const LW = `<img class="logo" src="${HQ ? "hq-logo-white.png" : IMG + "drp-logo-white.png"}">`, LD = `<img class="logo" src="${IMG}drp-logo-dark.png">`;
 const arrow = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
 const T = {
@@ -237,7 +242,7 @@ D: () => `<div class="pad"><div class="top">${LD}<span class="tag">Pre-launch</s
   <ul><li>Prices &amp; payment plan before launch</li><li>Priority on unit, plot &amp; orientation</li><li>Free, no obligation</li></ul>
   <div class="row"><span class="cta">Register now ${arrow}</span><div class="price" style="border-color:var(--or2)"><small style="color:var(--ink3)">From</small><strong style="font-size:56px">AED 3.8M*</strong></div></div>
  </div><span class="note dk">Representative imagery</span>`,
-U1: () => `<img class="bg" src="${IMG}ps-townhouses.webp"><div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div><div class="spacer"></div>
+U1: () => `<img class="bg" src="${TH}"><div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div><div class="spacer"></div>
   <small>Townhouses</small><h1>3 &amp; 4 Bedrooms</h1><p>Expected from AED 3.8M* · ~2,000 sqft</p></div><span class="note">Representative imagery</span>`,
 U2: () => `<img class="bg" src="${IMG}ps-villa.webp"><div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div><div class="spacer"></div>
   <small>Standalone villas</small><h1>4 &amp; 5 Bedrooms</h1><p>Private pools · up to ~AED 9M*</p></div><span class="note">Representative imagery</span>`,
@@ -280,7 +285,7 @@ D: () => `<div class="pad"><div class="top">${LD}<span class="tag">Pre-launch</s
 };
 const c = document.getElementById("c");
 const cls = k.startsWith("U") ? "U" : k;
-c.className = `${s} ${cls}`;
+c.className = `${s} ${cls}${BG === "th" ? " th" : ""}`;
 c.innerHTML = (s === "s169" && L[k] ? L[k] : T[k])();
 if (s === "s1") c.querySelectorAll(".map svg").forEach(v => { v.setAttribute("viewBox","0 56 600 356"); v.setAttribute("preserveAspectRatio","xMidYMid slice"); });
 </script>
