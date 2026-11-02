@@ -7,7 +7,7 @@ Edit the `CONFIG` block at the bottom of `index.html`:
 
 | Key | What it does |
 |---|---|
-| `whatsapp` | WhatsApp number, digits only (currently `971585273791`) |
+| `whatsapp` | WhatsApp number, digits only (currently `971567770272`) |
 | `phone` | Office telephone (currently `+971 4 529 4904`) |
 | `email` / `office` | Contact email and office address shown in the contact section |
 | `agency` | Brokerage name in the footer |

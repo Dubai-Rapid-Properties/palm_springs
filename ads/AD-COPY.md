@@ -65,7 +65,7 @@ Files: `hq/carousel-4x5/carousel-4x5-1.jpg` to `-6.jpg` (2160×2700). Upload the
 > 📍 ~15 min to Al Maktoum Airport (DWC)
 >
 > Want the brochure, floor plans and launch prices before anyone else?
-> 📲 DM us or WhatsApp +971 58 527 3791
+> 📲 DM us or WhatsApp +971 56 777 0272
 > 🔗 Link in bio
 >
 > *Expected pricing, subject to change. Imagery is representative.
