@@ -290,8 +290,8 @@ h2 em,h1 em,h3 em{font-style:italic;font-weight:300}
 .tabs button .c{opacity:.55;margin-left:4px}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,17vw,250px);grid-auto-flow:dense;gap:10px}
 .tile{position:relative;overflow:hidden;background:var(--stone);cursor:zoom-in;padding:0;display:block;width:100%;height:100%}
-.grid .tile:nth-child(7n+1){grid-column:span 2;grid-row:span 2}
-.grid .tile:nth-child(7n+5){grid-column:span 2}
+.grid .tile.big{grid-column:span 2;grid-row:span 2}
+.grid .tile.wide{grid-column:span 2}
 .tile img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .tile:hover img{transform:scale(1.05)}
 .tile .tc{position:absolute;inset:auto 0 0 0;padding:40px 16px 14px;background:linear-gradient(transparent,rgba(0,0,0,.55));color:#fff;text-align:left;pointer-events:none;opacity:.92}
@@ -538,7 +538,6 @@ footer{background:var(--night);color:rgba(242,238,232,.55);padding:56px 0 110px;
   .am h3{font-size:1.2rem}
   .am p{font-size:.78rem}
   .grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;gap:6px}
-  .grid .tile:nth-child(7n+5){grid-column:span 1}
   .tile .tc{padding:24px 10px 8px}
   .tile .tc b{font-size:.95rem}
   .tile .tc .ri{font-size:.5rem}
@@ -1691,7 +1690,21 @@ const DLD_FEE_PCT = 4;
       grid.innerHTML = list.map((it, i) =>
         `<button type="button" class="tile" data-i="${i}" aria-label="Open image: ${(it.caption || "").replace(/"/g, "&quot;")}">${imgTag(it)}<span class="tc"><b>${it.caption || ""}</b><span class="ri">Representative imagery</span></span></button>`).join("");
       $$(".tile", grid).forEach(t => t.addEventListener("click", () => lbOpen(list, +t.dataset.i)));
+      layoutMosaic();
     };
+    // First tile is large (2x2); widen tiles from the end so every row is filled, whatever the count or column number.
+    const layoutMosaic = () => {
+      const tiles = $$(".tile", grid);
+      tiles.forEach(t => { t.classList.remove("big", "wide"); t.style.gridColumn = ""; });
+      if (!tiles.length) return;
+      const cols = getComputedStyle(grid).gridTemplateColumns.split(" ").length;
+      if (tiles.length === 1) { tiles[0].style.gridColumn = "1 / -1"; tiles[0].classList.add("big"); return; }
+      let cells = tiles.length;
+      if (tiles.length >= 3) { tiles[0].classList.add("big"); cells += 3; }
+      for (let k = tiles.length - 1; k >= (tiles.length >= 3 ? 1 : 0) && cells % cols !== 0; k--) { tiles[k].classList.add("wide"); cells++; }
+    };
+    let rz;
+    addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(layoutMosaic, 150); });
     $$("#gTabs button").forEach(b => b.addEventListener("click", () => {
       filter = b.dataset.f;
       $$("#gTabs button").forEach(x => x.setAttribute("aria-selected", String(x === b)));

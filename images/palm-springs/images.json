@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-14T08:02:11+00:00",
+  "generated": "2026-11-14T09:15:03+00:00",
   "folders": {
     "aerial": [
       {
@@ -18,13 +18,6 @@
       }
     ],
     "exterior": [
-      {
-        "src": "images/palm-springs/exterior/standalone-villa-private-pool.webp",
-        "w": 1037,
-        "h": 666,
-        "alt": "Contemporary standalone villa with a private pool and landscaped garden (representative image)",
-        "caption": "Standalone villa with pool"
-      },
       {
         "src": "images/palm-springs/exterior/villa-garden-pool.webp",
         "w": 1376,
@@ -51,32 +44,11 @@
     ],
     "townhouses": [
       {
-        "src": "images/palm-springs/townhouses/townhouse-community-aerial.webp",
-        "w": 1037,
-        "h": 667,
-        "alt": "Aerial view of townhouse rows among landscaped streets (representative image)",
-        "caption": "Townhouse community"
-      },
-      {
-        "src": "images/palm-springs/townhouses/townhouse-corner-units.webp",
-        "w": 1070,
-        "h": 688,
-        "alt": "Contemporary corner townhouses with roof terraces and landscaped streets (representative image)",
-        "caption": "Corner townhouses"
-      },
-      {
         "src": "images/palm-springs/townhouses/townhouse-row-elevation.webp",
         "w": 1600,
         "h": 1000,
         "alt": "Front view of a row of two-storey townhouses with carports and landscaped frontage (representative image)",
         "caption": "Townhouse row"
-      },
-      {
-        "src": "images/palm-springs/townhouses/townhouse-row-sunset.webp",
-        "w": 1038,
-        "h": 666,
-        "alt": "Row of contemporary townhouses with gardens at sunset (representative image)",
-        "caption": "Townhouses at sunset"
       }
     ],
     "interiors": [
