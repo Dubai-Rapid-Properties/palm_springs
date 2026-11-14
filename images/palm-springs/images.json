@@ -1,0 +1,71 @@
+{
+  "generated": "2026-11-14T07:23:01+00:00",
+  "folders": {
+    "aerial": [
+      {
+        "src": "images/palm-springs/aerial/palm-springs-aerial-sunset.webp",
+        "w": 1674,
+        "h": 940,
+        "alt": "Aerial view of a villa and townhouse community at sunset with Palm Jebel Ali on the horizon (representative image)",
+        "caption": "Community aerial at sunset"
+      }
+    ],
+    "exterior": [
+      {
+        "src": "images/palm-springs/exterior/standalone-villa-private-pool.webp",
+        "w": 1037,
+        "h": 666,
+        "alt": "Contemporary standalone villa with a private pool and landscaped garden (representative image)",
+        "caption": "Standalone villa with pool"
+      },
+      {
+        "src": "images/palm-springs/exterior/villas-with-private-pools.webp",
+        "w": 1673,
+        "h": 940,
+        "alt": "Row of contemporary villas with private pools and palm-lined streets at sunset (representative image)",
+        "caption": "Villas with private pools"
+      }
+    ],
+    "lagoon-villas": [],
+    "townhouses": [
+      {
+        "src": "images/palm-springs/townhouses/townhouse-community-aerial.webp",
+        "w": 1037,
+        "h": 667,
+        "alt": "Aerial view of townhouse rows among landscaped streets (representative image)",
+        "caption": "Townhouse community"
+      },
+      {
+        "src": "images/palm-springs/townhouses/townhouse-row-sunset.webp",
+        "w": 1038,
+        "h": 666,
+        "alt": "Row of contemporary townhouses with gardens at sunset (representative image)",
+        "caption": "Townhouses at sunset"
+      }
+    ],
+    "interiors": [
+      {
+        "src": "images/palm-springs/interiors/double-height-lounge.webp",
+        "w": 1000,
+        "h": 1000,
+        "alt": "Bright double-height lounge with large windows and plants (representative image)",
+        "caption": "Double-height lounge"
+      },
+      {
+        "src": "images/palm-springs/interiors/living-room-sunset-view.webp",
+        "w": 1673,
+        "h": 940,
+        "alt": "Open-plan living room opening onto a pool terrace with sunset sea views (representative image)",
+        "caption": "Living room with sea view"
+      },
+      {
+        "src": "images/palm-springs/interiors/master-bedroom.webp",
+        "w": 1000,
+        "h": 1000,
+        "alt": "Calm master bedroom with full-height glazing (representative image)",
+        "caption": "Master bedroom"
+      }
+    ],
+    "amenities": []
+  }
+}
