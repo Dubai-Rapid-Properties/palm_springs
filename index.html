@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Palm Springs by Nakheel | Villas &amp; Townhouses | D|R|P</title>
-<meta name="description" content="Palm Springs by Nakheel in Jebel Ali: 3 & 4 bedroom townhouses and 4 & 5 bedroom villas, starting from AED 3.8M (≈ €925k). Prices, payment plan, gallery and floor plans from D|R|P.">
+<meta name="description" content="Palm Springs by Nakheel in Jebel Ali: 3 & 4 bedroom townhouses and 4 & 5 bedroom villas from AED 3.8M to 8.9M (≈ €925k – €2.17M). Prices, payment plan, gallery and floor plans from D|R|P.">
 <meta property="og:title" content="Palm Springs by Nakheel | Starting from AED 3.8M (≈ €925k)">
 <meta property="og:description" content="Townhouses and villas right below Palm Jebel Ali. Register with D|R|P for prices, floor plans and the payment plan before launch.">
 <meta property="og:type" content="website">
@@ -348,6 +348,137 @@ footer{background:var(--paper);padding:40px 0 110px;color:var(--ink-3);font-size
 .mcta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line);gap:8px}
 .mcta .btn{flex:1;padding:15px 8px}
 
+/* ===== v3: price list ===== */
+.units.u3{grid-template-columns:repeat(3,1fr)}
+.units.u2{grid-template-columns:repeat(2,1fr)}
+.units.u2 .unit figure{aspect-ratio:16/9}
+.ugroup{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin:30px 0 16px;padding-bottom:12px;border-bottom:1px solid var(--line-2)}
+.ugroup:first-of-type{margin-top:0}
+.ugroup h3{font-size:1.7rem}
+.ugroup span{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+.unit .variant{font-size:.86rem;color:var(--ink-2);margin-top:-10px}
+.psf small{font-family:var(--sans);font-size:.72rem;color:var(--ink-3)}
+.hero .pr-range{font-style:normal}
+
+/* ===== v3: payment timeline ===== */
+.tl-wrap{padding:30px 30px 26px}
+.tl-sum{display:flex;gap:40px;flex-wrap:wrap;margin-bottom:30px}
+.tl-sum div{display:flex;align-items:center;gap:14px}
+.tl-sum b{font-family:var(--serif);font-weight:400;font-size:2.6rem;line-height:1;color:var(--orange-ink)}
+.tl-sum div:last-child b{color:var(--charcoal)}
+.tl-sum span{font-size:.78rem;color:var(--ink-2);line-height:1.4}
+.tl{list-style:none;display:grid;grid-template-columns:repeat(8,1fr);position:relative;margin-bottom:24px}
+.tl::before{content:"";position:absolute;left:6%;right:6%;top:7px;height:2px;background:var(--line-2)}
+.tl-step{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:0 4px}
+.tl-dot{width:16px;height:16px;border-radius:50%;background:#fff;border:2px solid var(--orange);position:relative;z-index:1;margin-bottom:8px}
+.tl-key .tl-dot{background:var(--orange)}
+.tl-step b{font-family:var(--serif);font-weight:400;font-size:1.6rem;line-height:1;color:var(--ink)}
+.tl-key b{color:var(--orange-ink)}
+.tl-lab{font-size:.72rem;color:var(--ink-2);font-weight:500}
+.tl-date{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.planbar i:first-child{background:var(--orange)}
+.planbar i:nth-child(2){background:var(--charcoal)}
+
+/* ===== v3: calculator ===== */
+.calc{margin-top:16px;padding:28px 30px}
+.calc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+.calc-head h3{font-size:1.5rem}
+.calc-head p{font-size:.84rem;color:var(--ink-3)}
+.calc-pick{min-width:min(100%,340px)}
+.calc-table{overflow-x:auto}
+.calc table{width:100%;border-collapse:collapse;font-size:.86rem}
+.calc th{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);font-weight:600;text-align:left;padding:10px 10px;border-bottom:1.5px solid var(--ink)}
+.calc td{padding:11px 10px;border-bottom:1px solid var(--line);color:var(--ink-2);white-space:nowrap}
+.calc td:nth-child(n+3),.calc th:nth-child(n+3){text-align:right}
+.calc td.amt{font-family:var(--serif);color:var(--ink);font-size:.98rem}
+.calc tfoot td{border-bottom:0;color:var(--ink)}
+.calc tfoot tr.tot td{font-weight:600;border-top:1.5px solid var(--ink)}
+.calc tfoot tr.dld td{color:var(--orange-ink)}
+.calc .eurcol{display:none}
+.calc td .dt{display:none}
+.calc.show-eur .eurcol{display:table-cell}
+
+/* ===== v3: location map ===== */
+.loc{display:grid;grid-template-columns:1.65fr 1fr;gap:16px;align-items:stretch}
+.map-shell{position:relative;overflow:hidden;padding:0;display:flex;flex-direction:column}
+.lmap{flex:1;min-height:560px;background:#eceae6;z-index:0}
+.lmap-ph{height:100%;display:grid;place-items:center;color:var(--ink-3);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:20px}
+.map-tools{position:absolute;top:12px;right:12px;z-index:500;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.seg-mini{display:inline-flex;background:#fff;border:1px solid var(--line-2);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.seg-mini button,.tog{padding:8px 12px;font-size:.64rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.seg-mini button[aria-pressed="true"]{background:var(--charcoal-2);color:#fff}
+.tog{background:#fff;border:1px solid var(--line-2);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.tog[aria-pressed="true"]{color:var(--orange-ink)}
+.tog[aria-pressed="true"]::before{content:"● ";color:var(--orange)}
+.map-hint{position:absolute;inset:0;z-index:600;display:grid;place-items:center;background:rgba(46,46,46,.45);color:#fff;font-size:.82rem;font-weight:500;letter-spacing:.06em;pointer-events:none}
+.lm-panel{padding:24px 22px;display:flex;flex-direction:column}
+.lm-panel h3{font-size:.7rem;font-family:var(--sans);font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px}
+.lm-list{list-style:none;flex:1}
+.lm-list button{width:100%;display:grid;grid-template-columns:1fr auto;gap:2px 12px;text-align:left;padding:11px 10px;border-bottom:1px solid var(--line);border-left:2px solid transparent;transition:background .15s,border-color .15s}
+.lm-list button:hover,.lm-list button.active{background:var(--paper);border-left-color:var(--orange)}
+.lm-list .n{font-size:.88rem;color:var(--ink)}
+.lm-list .t{font-family:var(--serif);font-size:1rem;color:var(--orange-ink);text-align:right}
+.lm-list .t.tbc{font-family:var(--sans);font-size:.72rem;color:var(--ink-3);letter-spacing:.06em}
+.lm-list .d{grid-column:1/-1;font-size:.7rem;color:var(--ink-3)}
+.lm-note{font-size:.72rem;color:var(--ink-3);margin:14px 0 16px}
+.lm-panel .btn-row .btn{flex:1}
+.aerials{display:grid;gap:16px;margin-top:16px}
+.aerial{margin:0}
+.aerial-btn{display:block;width:100%;padding:0;cursor:zoom-in;background:var(--paper);overflow:hidden}
+.aerial-btn img{width:100%;height:auto;transition:transform .8s}
+.aerial-btn:hover img{transform:scale(1.02)}
+.aerial figcaption{font-size:.84rem;color:var(--ink-2);padding:12px 2px 0}
+.aerial figcaption b{font-family:var(--serif);font-weight:400;font-size:1.05rem;color:var(--ink)}
+.aerial figcaption .ri{color:var(--ink-3);margin-left:6px}
+/* leaflet markers */
+.ps-icon{position:relative}
+.ps-pin{position:absolute;left:50%;top:0;width:26px;height:26px;margin-left:-13px;background:var(--orange);border:3px solid #fff;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 3px 10px rgba(0,0,0,.35)}
+.ps-pin::after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;background:#fff;border-radius:50%}
+.ps-ring{position:absolute;left:50%;top:22px;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:rgba(244,123,73,.35);animation:psPulse 2.2s ease-out infinite}
+@keyframes psPulse{0%{transform:scale(.4);opacity:.9}100%{transform:scale(1.8);opacity:0}}
+.lm-icon{position:relative}
+.lm-dot{position:absolute;left:0;top:0;width:12px;height:12px;border-radius:50%;background:var(--charcoal);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35);transition:transform .15s,background .15s}
+.lm-lab{position:absolute;left:16px;top:-3px;white-space:nowrap;font:600 10.5px/1 var(--sans);letter-spacing:.04em;color:var(--charcoal);background:rgba(255,255,255,.92);padding:3px 6px;box-shadow:0 1px 3px rgba(0,0,0,.18)}
+.lm-icon.on .lm-dot{background:var(--orange);transform:scale(1.35)}
+.lm-icon.on .lm-lab{background:var(--charcoal-2);color:#fff}
+.ring-lab{font:600 10px/1 var(--sans);color:var(--ink-3);background:rgba(255,255,255,.8);padding:2px 4px;white-space:nowrap;transform:translate(-50%,-50%)}
+.leaflet-container{font-family:var(--sans)}
+.leaflet-control-attribution{font-size:10px}
+.leaflet-popup-content{font-size:.85rem;margin:12px 16px}
+.leaflet-popup-content b{font-family:var(--serif);font-weight:400;font-size:1.05rem}
+.leaflet-tooltip.drive{background:var(--charcoal-2);color:#fff;border:0;font-weight:600;font-size:.74rem;padding:6px 9px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.leaflet-tooltip.drive::before{border-top-color:var(--charcoal-2)}
+
+@media (max-width:1000px){
+  .loc{grid-template-columns:1fr}
+  .lmap{min-height:440px}
+  .units.u3{grid-template-columns:repeat(2,1fr)}
+  .tl{grid-template-columns:repeat(4,1fr);row-gap:26px}
+  .tl::before{display:none}
+}
+@media (max-width:640px){
+  .units.u3,.units.u2{grid-template-columns:1fr}
+  .lmap{min-height:380px}
+  .map-tools{position:static;order:2;justify-content:space-between;padding:10px;border-top:1px solid var(--line);background:#fff}
+  .map-tools .seg-mini,.map-tools .tog{box-shadow:none}
+  .lm-icon:not(.on) .lm-lab{display:none}
+  .leaflet-control-attribution{font-size:9px;line-height:1.3}
+  .tl{grid-template-columns:1fr;gap:0;padding-left:6px}
+  .tl::before{display:block;left:13px;right:auto;top:8px;bottom:8px;width:2px;height:auto}
+  .tl-step{flex-direction:row;align-items:center;text-align:left;gap:12px;padding:9px 0}
+  .tl-dot{margin:0;flex:none}
+  .tl-step b{font-size:1.3rem;min-width:52px}
+  .tl-lab{flex:1}
+  .tl-wrap,.calc{padding:22px 16px}
+  .tl-sum{gap:20px}
+  .tl-sum b{font-size:2rem}
+  .calc td,.calc th{padding:9px 6px}
+  .calc .dcol{display:none}
+  .calc td .dt{display:block;font-size:.66rem;color:var(--ink-3)}
+  .calc td{white-space:normal}
+  .calc td.amt{white-space:nowrap}
+}
+
 /* reveal */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
 .rv.in{opacity:1;transform:none}
@@ -442,9 +573,9 @@ footer{background:var(--paper);padding:40px 0 110px;color:var(--ink-3);font-size
     <h1>Palm Springs</h1>
     <p class="sub">3 &amp; 4 BR Townhouses · 4 &amp; 5 BR Villas · Lagoon Villas · Right below Palm Jebel Ali, Jebel Ali</p>
     <div class="price">
-      <span>Townhouses</span>
-      <strong>Starting from AED 3.8M* (≈ €925k)</strong>
-      <em>*Indicative, subject to change at launch</em>
+      <span>Townhouses &amp; Villas</span>
+      <strong>AED 3.8M – 8.9M*</strong>
+      <em class="pr-range"><span class="js-range-eur">≈ €925k – €2.17M</span> · *Indicative, subject to Nakheel's confirmation</em>
     </div>
     <div class="btn-row">
       <a href="https://wa.me/971567770272" class="btn btn-orange js-wa" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enquire on WhatsApp</a>
@@ -460,9 +591,9 @@ footer{background:var(--paper);padding:40px 0 110px;color:var(--ink-3);font-size
   <div class="wrap">
     <div class="stat"><strong>3 – 5 BR</strong><small>Bedrooms</small></div>
     <div class="stat"><strong>Villas</strong><small>&amp; Townhouses</small></div>
-    <div class="stat"><strong>2,326 sq ft</strong><small>Sizes from*</small></div>
-    <div class="stat"><strong>AED 3.8M*</strong><small>≈ €925k · Starting</small></div>
-    <div class="stat"><strong>10 / 50 / 40</strong><small>Payment plan*</small></div>
+    <div class="stat"><strong>2,329 – 4,921</strong><small>Sq ft*</small></div>
+    <div class="stat"><strong>AED 3.8M – 8.9M*</strong><small>≈ €925k – €2.17M</small></div>
+    <div class="stat"><strong>60 / 40</strong><small>Payment plan*</small></div>
     <div class="stat"><strong>Pre-launch</strong><small>Register now</small></div>
   </div>
 </div>
@@ -493,53 +624,88 @@ footer{background:var(--paper);padding:40px 0 110px;color:var(--ink-3);font-size
     <div class="sec-row">
       <div class="sec-head rv">
         <span class="eyebrow">Homes &amp; Prices</span>
-        <h2>Four ways to live at Palm Springs</h2>
+        <h2>The full price list</h2>
+        <p class="lead">Five home types across townhouses and villas, from AED 3.8M to AED 8.9M*. Tap "Get Floor Plan" on any home to receive its layout.</p>
       </div>
       <div class="cur rv" role="group" aria-label="Currency"><button type="button" data-cur="AED" aria-pressed="true">AED</button><button type="button" data-cur="EUR" aria-pressed="false">EUR</button></div>
     </div>
-    <div class="units">
+    <div class="ugroup rv"><h3>Townhouses</h3><span>3 &amp; 4 bedrooms · G+1 and G+2</span></div>
+    <div class="units u3">
       <article class="card unit rv">
-        <figure><img src="images/palm-springs/townhouses/townhouse-row-sunset.webp" alt="Row of contemporary three-bedroom townhouses with gardens at sunset" width="1038" height="666" loading="lazy"><figcaption class="cap ri">Representative imagery</figcaption></figure>
+        <figure><img src="images/palm-springs/townhouses/townhouse-row-sunset.webp" alt="Row of contemporary three-bedroom mid-unit townhouses with gardens at sunset" width="1038" height="666" loading="lazy"><figcaption class="cap ri">Representative imagery</figcaption></figure>
         <div class="unit-body">
-          <span class="k">Townhouse</span>
-          <h3>3 Bedrooms</h3>
-          <div><div class="from">Starting from</div><div class="pbig pr" data-aed="3800000">AED 3.8M* <small>· ≈ €925k</small></div></div>
-          <ul class="rows"><li><span>Size</span><b>~2,326 sq ft <small>(216 sq m)</small></b></li><li><span>Type</span><b>Townhouse</b></li></ul>
-          <a href="#register" class="btn btn-dark" data-unit="3BR Townhouse" data-cta="card_floor_plan_3br_townhouse">Get Floor Plan</a>
+          <span class="k">Townhouse · G+1</span>
+          <h3>3BR Townhouse</h3>
+          <div class="variant">Mid unit</div>
+          <div><div class="from">Price*</div><div class="pbig pr" data-aed="3800000">AED 3.8M* <small>· ≈ €925k</small></div></div>
+          <ul class="rows">
+            <li><span>Size</span><b>~2,329 sq ft <small>(216 sq m)</small></b></li>
+            <li><span>Price per sq ft</span><b class="psf" data-aed="3800000" data-sqft="2329">AED 1,632</b></li>
+          </ul>
+          <a href="#register" class="btn btn-dark" data-unit="3BR Townhouse – Mid unit (G+1)" data-cta="card_floor_plan_th3-mid">Get Floor Plan</a>
         </div>
       </article>
       <article class="card unit rv">
-        <figure><img src="images/palm-springs/townhouses/townhouse-community-aerial.webp" alt="Aerial view of four-bedroom townhouse rows among landscaped streets" width="1037" height="667" loading="lazy"><figcaption class="cap ri">Representative imagery</figcaption></figure>
+        <figure><img src="images/palm-springs/townhouses/townhouse-community-aerial.webp" alt="Aerial view of four-bedroom corner townhouses among landscaped streets" width="1037" height="667" loading="lazy"><figcaption class="cap ri">Representative imagery</figcaption></figure>
         <div class="unit-body">
-          <span class="k">Townhouse</span>
-          <h3>4 Bedrooms</h3>
-          <div><div class="from">Starting from</div><div class="pbig pr" data-aed="4600000">AED 4.6M* <small>· ≈ €1.12M</small></div></div>
-          <ul class="rows"><li><span>Size</span><b>~2,672–3,115 sq ft <small>(248–289 sq m)</small></b></li><li><span>Type</span><b>Townhouse</b></li></ul>
-          <a href="#register" class="btn btn-dark" data-unit="4BR Townhouse" data-cta="card_floor_plan_4br_townhouse">Get Floor Plan</a>
+          <span class="k">Townhouse · G+1</span>
+          <h3>4BR Townhouse</h3>
+          <div class="variant">Type 1 – Corner</div>
+          <div><div class="from">Price*</div><div class="pbig pr" data-aed="4600000">AED 4.6M* <small>· ≈ €1.12M</small></div></div>
+          <ul class="rows">
+            <li><span>Size</span><b>~2,672 sq ft <small>(248 sq m)</small></b></li>
+            <li><span>Price per sq ft</span><b class="psf" data-aed="4600000" data-sqft="2672">AED 1,722</b></li>
+          </ul>
+          <a href="#register" class="btn btn-dark" data-unit="4BR Townhouse Type 1 – Corner (G+1)" data-cta="card_floor_plan_th4-t1">Get Floor Plan</a>
         </div>
       </article>
+      <article class="card unit rv">
+        <figure><img src="images/palm-springs/townhouses/townhouse-corner-units.webp" alt="Three-storey four-bedroom corner townhouses with roof terraces" width="1070" height="688" loading="lazy"><figcaption class="cap ri">Representative imagery</figcaption></figure>
+        <div class="unit-body">
+          <span class="k">Townhouse · G+2</span>
+          <h3>4BR Townhouse</h3>
+          <div class="variant">Type 2 – Corner</div>
+          <div><div class="from">Price*</div><div class="pbig pr" data-aed="5200000">AED 5.2M* <small>· ≈ €1.27M</small></div></div>
+          <ul class="rows">
+            <li><span>Size</span><b>~3,115 sq ft <small>(289 sq m)</small></b></li>
+            <li><span>Price per sq ft</span><b class="psf" data-aed="5200000" data-sqft="3115">AED 1,669</b></li>
+          </ul>
+          <a href="#register" class="btn btn-dark" data-unit="4BR Townhouse Type 2 – Corner (G+2)" data-cta="card_floor_plan_th4-t2">Get Floor Plan</a>
+        </div>
+      </article>
+    </div>
+    <div class="ugroup rv"><h3>Villas</h3><span>4 &amp; 5 bedrooms · G+2</span></div>
+    <div class="units u2">
       <article class="card unit rv">
         <figure><img src="images/palm-springs/exterior/standalone-villa-private-pool.webp" alt="Four-bedroom standalone villa with a private pool and landscaped garden" width="1037" height="666" loading="lazy"><figcaption class="cap ri">Representative imagery</figcaption></figure>
         <div class="unit-body">
-          <span class="k">Standalone Villa</span>
-          <h3>4 Bedrooms</h3>
-          <div><div class="from">Price</div><div class="pbig req">Price on request</div></div>
-          <ul class="rows"><li><span>Size</span><b>~4,041 sq ft <small>(375 sq m)</small></b></li><li><span>Type</span><b>Villa</b></li></ul>
-          <a href="#register" class="btn btn-dark" data-unit="4BR Villa" data-cta="card_floor_plan_4br_villa">Get Floor Plan</a>
+          <span class="k">Villa · G+2</span>
+          <h3>4BR Villa</h3>
+          <div class="variant">Standalone</div>
+          <div><div class="from">Price*</div><div class="pbig pr" data-aed="7000000">AED 7M* <small>· ≈ €1.70M</small></div></div>
+          <ul class="rows">
+            <li><span>Size</span><b>~4,041 sq ft <small>(375 sq m)</small></b></li>
+            <li><span>Price per sq ft</span><b class="psf" data-aed="7000000" data-sqft="4041">AED 1,732</b></li>
+          </ul>
+          <a href="#register" class="btn btn-dark" data-unit="4BR Villa (G+2)" data-cta="card_floor_plan_v4">Get Floor Plan</a>
         </div>
       </article>
       <article class="card unit rv">
         <figure><img src="images/palm-springs/exterior/villas-with-private-pools.webp" alt="Five-bedroom villas with private pools along a palm-lined street at sunset" width="1673" height="940" loading="lazy"><figcaption class="cap ri">Representative imagery</figcaption></figure>
         <div class="unit-body">
-          <span class="k">Standalone Villa</span>
-          <h3>5 Bedrooms</h3>
-          <div><div class="from">Price</div><div class="pbig req">Price on request</div></div>
-          <ul class="rows"><li><span>Size</span><b>~4,921 sq ft <small>(457 sq m)</small></b></li><li><span>Type</span><b>Villa</b></li></ul>
-          <a href="#register" class="btn btn-dark" data-unit="5BR Villa" data-cta="card_floor_plan_5br_villa">Get Floor Plan</a>
+          <span class="k">Villa · G+2</span>
+          <h3>5BR Villa</h3>
+          <div class="variant">Standalone</div>
+          <div><div class="from">Price*</div><div class="pbig pr" data-aed="8900000">AED 8.9M* <small>· ≈ €2.17M</small></div></div>
+          <ul class="rows">
+            <li><span>Size</span><b>~4,921 sq ft <small>(457 sq m)</small></b></li>
+            <li><span>Price per sq ft</span><b class="psf" data-aed="8900000" data-sqft="4921">AED 1,809</b></li>
+          </ul>
+          <a href="#register" class="btn btn-dark" data-unit="5BR Villa (G+2)" data-cta="card_floor_plan_v5">Get Floor Plan</a>
         </div>
       </article>
     </div>
-    <p class="note rv">*Prices and sizes are indicative, subject to change at launch. EUR amounts are approximate conversions. Imagery is representative only.</p>
+    <p class="note rv">*All prices, sizes and floor counts are indicative, subject to Nakheel's confirmation. EUR amounts are approximate conversions (AED 3.8M ≈ €925k). Imagery is representative only.</p>
   </div>
 </section>
 
@@ -548,15 +714,47 @@ footer{background:var(--paper);padding:40px 0 110px;color:var(--ink-3);font-size
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Payment Plan*</span>
-      <h2>Pay 10% now, 40% on handover</h2>
-      <p class="lead">The expected plan spreads most of the cost across construction, with a large share due only when you receive your keys.</p>
+      <h2>60% during construction · 40% on handover</h2>
+      <p class="lead">Pay 10% to book, then spread 50% over six instalments to May 2029. The remaining 40% is due only when you receive the keys.</p>
     </div>
-    <div class="plan">
-      <div class="card step rv"><span class="n">STEP 1</span><div class="pct">10%</div><h3>On booking</h3><p>Secure your unit at launch with a 10% down payment.</p></div>
-      <div class="card step rv"><span class="n">STEP 2</span><div class="pct">50%</div><h3>During construction</h3><p>Paid in instalments linked to the construction timeline.</p></div>
-      <div class="card step rv"><span class="n">STEP 3</span><div class="pct">40%</div><h3>On handover</h3><p>The balance is due when the home is completed and handed over.</p></div>
+    <div class="tl-wrap card rv">
+      <div class="tl-sum"><div><b>60%</b><span>During construction<br>(incl. 10% booking)</span></div><div><b>40%</b><span>On handover<br>(expected Oct 2030)</span></div></div>
+      <ol class="tl" aria-label="Payment timeline">
+        <li class="tl-step tl-key"><span class="tl-dot"></span><b>10%</b><span class="tl-lab">On booking</span><span class="tl-date">At launch</span></li>
+        <li class="tl-step"><span class="tl-dot"></span><b>10%</b><span class="tl-lab">Instalment 1</span><span class="tl-date">Apr 2027</span></li>
+        <li class="tl-step"><span class="tl-dot"></span><b>10%</b><span class="tl-lab">Instalment 2</span><span class="tl-date">Sep 2027</span></li>
+        <li class="tl-step"><span class="tl-dot"></span><b>10%</b><span class="tl-lab">Instalment 3</span><span class="tl-date">Feb 2028</span></li>
+        <li class="tl-step"><span class="tl-dot"></span><b>10%</b><span class="tl-lab">Instalment 4</span><span class="tl-date">Jul 2028</span></li>
+        <li class="tl-step"><span class="tl-dot"></span><b>5%</b><span class="tl-lab">Instalment 5</span><span class="tl-date">Dec 2028</span></li>
+        <li class="tl-step"><span class="tl-dot"></span><b>5%</b><span class="tl-lab">Instalment 6</span><span class="tl-date">May 2029</span></li>
+        <li class="tl-step tl-key"><span class="tl-dot"></span><b>40%</b><span class="tl-lab">On handover</span><span class="tl-date">Expected Oct 2030</span></li>
+      </ol>
+      <div class="planbar" aria-hidden="true"><i style="flex:60"></i><i style="flex:40"></i></div>
     </div>
-    <div class="planbar rv" aria-hidden="true"><i style="flex:10"></i><i style="flex:50"></i><i style="flex:40"></i></div>
+
+    <div class="calc card rv" id="calc">
+      <div class="calc-head">
+        <div><h3>Payment calculator</h3><p>Pick a home to see each instalment.</p></div>
+        <label class="calc-pick">Home
+          <select id="calcUnit">
+            <option value="th3-mid" data-aed="3800000">3BR Townhouse – Mid unit (G+1) · AED 3.8M</option>
+            <option value="th4-t1" data-aed="4600000">4BR Townhouse Type 1 – Corner (G+1) · AED 4.6M</option>
+            <option value="th4-t2" data-aed="5200000">4BR Townhouse Type 2 – Corner (G+2) · AED 5.2M</option>
+            <option value="v4" data-aed="7000000">4BR Villa (G+2) · AED 7M</option>
+            <option value="v5" data-aed="8900000">5BR Villa (G+2) · AED 8.9M</option>
+          </select>
+        </label>
+      </div>
+      <div class="calc-table" role="region" aria-label="Instalment breakdown" tabindex="0">
+        <table>
+          <thead><tr><th>Milestone</th><th class="dcol">Date</th><th>%</th><th>AED</th><th class="eurcol">≈ EUR</th></tr></thead>
+          <tbody id="calcBody"></tbody>
+          <tfoot id="calcFoot"></tfoot>
+        </table>
+      </div>
+      <p class="note" style="margin-top:12px">The 4% DLD (Dubai Land Department) registration fee is paid on booking, separately from the purchase price. Other fees (e.g. admin/registration trustee) may apply.</p>
+    </div>
+
     <div class="plan-foot">
       <div class="gv rv">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><circle cx="9" cy="11" r="2.2"/><path d="M5.8 16c.6-1.6 1.8-2.4 3.2-2.4s2.6.8 3.2 2.4M14 10h4M14 13h3"/></svg>
@@ -564,7 +762,7 @@ footer{background:var(--paper);padding:40px 0 110px;color:var(--ink-3);font-size
       </div>
       <a href="#register" class="btn btn-orange rv" data-cta="payment_plan_section">Get the Full Payment Plan</a>
     </div>
-    <p class="note">*Expected, to be confirmed at launch.</p>
+    <p class="note">*Expected, subject to Nakheel's confirmation. Dates and percentages may change at launch.</p>
   </div>
 </section>
 
@@ -643,75 +841,33 @@ footer{background:var(--paper);padding:40px 0 110px;color:var(--ink-3);font-size
     <div class="sec-head rv">
       <span class="eyebrow">Location</span>
       <h2>Right below Palm Jebel Ali</h2>
-      <p class="lead">In Jebel Ali, in the middle of one of the world's biggest trade and logistics corridors, with fast access to Dubai's main highways, the new airport and the coast.</p>
+      <p class="lead">Explore Palm Springs on the map. Hover or tap a landmark to see the route line and the approximate drive time.</p>
     </div>
-    <div class="loc-grid">
-      <div class="card map-card rv">
-        <svg class="map" viewBox="0 0 600 460" role="img" aria-label="Schematic map showing Palm Springs right below Palm Jebel Ali on Sheikh Zayed Road">
-        
-        <rect class="sea" width="600" height="460"/>
-        <path class="land" d="M0 330 C80 300 140 262 210 236 C300 200 360 160 440 118 C510 82 560 50 600 30 L600 460 L0 460Z"/>
-        <path class="coast" d="M0 330 C80 300 140 262 210 236 C300 200 360 160 440 118 C510 82 560 50 600 30"/>
-        <!-- Palm Jebel Ali (stylised) -->
-        <g class="palm" transform="translate(168 150)">
-          <path d="M-92 18 A96 74 0 1 1 92 18"/>
-          <path d="M-100 26 A104 82 0 1 1 100 26" opacity=".55"/>
-          <path d="M0 72 L0 6"/>
-          <path d="M0 8 C-20 -6 -52 -12 -74 -6 M0 8 C-14 -14 -36 -32 -58 -38 M0 8 C-8 -18 -18 -44 -30 -56 M0 8 C0 -20 0 -46 0 -62 M0 8 C8 -18 18 -44 30 -56 M0 8 C14 -14 36 -32 58 -38 M0 8 C20 -6 52 -12 74 -6"/>
-          <path d="M0 72 L0 96"/>
-        </g>
-        <!-- Port basins -->
-        <path class="coast" d="M290 205 l14 -30 l26 -10 M312 196 l12 -26 M334 186 l10 -24 M356 176 l8 -22"/>
-        <!-- inland roads -->
-        <path class="road" d="M40 420 C160 380 260 330 360 270 C430 228 520 170 600 120"/>
-        <path class="road" d="M210 300 L290 440 M330 250 L440 440 M430 200 L560 420 M120 360 L170 460"/>
-        <path class="road" d="M260 330 C320 340 380 320 460 300 L600 260"/>
-        <!-- Etihad Rail (dashed) -->
-        <path class="rail" d="M0 410 C90 370 180 330 250 290"/>
-        <!-- Sheikh Zayed Road -->
-        <path class="szr" d="M0 360 C110 320 170 292 230 268 C320 232 400 186 470 146 C530 112 570 88 600 72"/>
-        <!-- connector links -->
-        <path class="link" d="M216 262 L318 196 M216 262 L388 252 M216 262 L470 312 M216 262 L408 392"/>
-        <!-- Plot -->
-        <ellipse class="plot-glow" cx="214" cy="266" rx="34" ry="22"/>
-        <path class="plot" d="M196 246 L232 236 L244 278 L206 290 Z"/>
-        <!-- nodes -->
-        <g class="node" transform="translate(318 196)"><circle r="13"/><path d="M-6 3 h12 l-2 4 h-8z M0 3 v-9 M-4 -2 h8"/></g>
-        <g class="node" transform="translate(388 252)"><circle r="13"/><path d="M-6 6 v-7 l4 3 v-3 l4 3 v-6 h4 v10z"/></g>
-        <g class="node" transform="translate(470 312)"><circle r="13"/><circle r="4" style="stroke-width:1.3"/><path d="M0 -8 v2 M0 6 v2 M-8 0 h2 M6 0 h2 M-5.6 -5.6 l1.4 1.4 M4.2 4.2 l1.4 1.4 M-5.6 5.6 l1.4 -1.4 M4.2 -4.2 l1.4 -1.4"/></g>
-        <g class="node" transform="translate(408 392)"><circle r="13"/><path d="M-7 1 L7 -1 M1 -1 L-2 -7 M1 0 L-2 7 M5 -1 l2 -3"/></g>
-        <!-- labels -->
-        <g><rect class="lbl-chip" x="104" y="64" width="128" height="22" rx="11"/><text class="lbl" x="168" y="79" text-anchor="middle">PALM JEBEL ALI</text></g>
-        <g><rect class="lbl-chip" x="146" y="304" width="136" height="32" rx="16" style="stroke:#c0511b"/><text class="lbl-script" x="214" y="326" text-anchor="middle">Palm Springs</text></g>
-        <text class="lbl" x="336" y="186">JEBEL ALI PORT</text>
-        <text class="lbl" x="406" y="248">JAFZA</text>
-        <text class="lbl" x="488" y="316">EXPO CITY</text>
-        <text class="lbl" x="426" y="396">AL MAKTOUM INTL</text>
-        <text class="lbl" x="40" y="398" transform="rotate(-21 40 398)" style="fill:#8a7a66">ETIHAD RAIL</text>
-        <text class="lbl" x="470" y="134" transform="rotate(-29 470 134)" style="fill:#c0511b">SHEIKH ZAYED RD</text>
-      </svg>
-        <div class="mc">Palm Springs within the Jebel Ali corridor · Schematic, not to scale</div>
+    <div class="loc">
+      <div class="map-shell card">
+        <div class="lmap" id="lmap" role="region" aria-label="Interactive map of Palm Springs and nearby landmarks">
+          <div class="lmap-ph">Loading map…</div>
+        </div>
+        <div class="map-hint" id="mapHint" hidden>Use two fingers to move the map</div>
+        <div class="map-hint" id="mapHintWheel" hidden>Click the map to enable zoom</div>
+        <div class="map-tools">
+          <div class="seg-mini" role="group" aria-label="Map style">
+            <button type="button" data-layer="map" aria-pressed="true">Map</button><button type="button" data-layer="sat" aria-pressed="false">Satellite</button>
+          </div>
+          <button type="button" class="tog" id="ringsBtn" aria-pressed="true">Distance rings</button>
+        </div>
       </div>
-      <div class="card around rv">
-        <h3>Approx. drive times</h3>
-        <ul class="rows">
-          <li><span>Sheikh Mohammed Bin Zayed Rd</span><b>~5 min</b></li>
-          <li><span>Al Khail Rd</span><b>~10 min</b></li>
-          <li><span>Palm Jebel Ali</span><b>~14 min</b></li>
-          <li><span>Al Maktoum Intl Airport (DWC)</span><b>~20 min</b></li>
-          <li><span>Dubai Marina Mall</span><b>~25 min</b></li>
-          <li><span>Dubai Intl Airport (DXB)</span><b>~35 min</b></li>
-        </ul>
-        <p>Approx. driving times in normal traffic.</p>
+      <div class="lm-panel card">
+        <h3>Nearby landmarks</h3>
+        <ul class="lm-list" id="lmList"></ul>
+        <p class="lm-note">Drive times are approx., in normal traffic. Distances are straight-line from Palm Springs.</p>
+        <div class="btn-row">
+          <a href="https://maps.app.goo.gl/m2GD1cmu7HNdKHW86" class="btn btn-outline" target="_blank" rel="noopener">Open in Google Maps</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=24.9453,55.0319" class="btn btn-dark" target="_blank" rel="noopener">Get Directions</a>
+        </div>
       </div>
     </div>
-    <div class="gmap rv">
-      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Palm Springs project location on Google Maps" src="https://maps.google.com/maps?q=24.9453001,55.0319358&amp;z=13&amp;output=embed"></iframe>
-    </div>
-    <div class="gmap-cap">
-      <span>Jebel Ali, Dubai · Below Palm Jebel Ali</span>
-      <a href="https://maps.app.goo.gl/m2GD1cmu7HNdKHW86" target="_blank" rel="noopener">Open in Google Maps →</a>
-    </div>
+    <div class="aerials" id="aerials"></div>
   </div>
 </section>
 
@@ -826,10 +982,11 @@ footer{background:var(--paper);padding:40px 0 110px;color:var(--ink-3);font-size
       <label>Email <span class="opt">(optional)</span><input name="email" type="email" autocomplete="email" placeholder="you@email.com"><span class="ferr" id="e-email">Please check your email address.</span></label>
       <label>Which home are you interested in?
         <select name="unit">
-          <option>3BR Townhouse</option>
-          <option>4BR Townhouse</option>
-          <option>4BR Villa</option>
-          <option>5BR Villa</option>
+          <option>3BR Townhouse – Mid unit (G+1)</option>
+          <option>4BR Townhouse Type 1 – Corner (G+1)</option>
+          <option>4BR Townhouse Type 2 – Corner (G+2)</option>
+          <option>4BR Villa (G+2)</option>
+          <option>5BR Villa (G+2)</option>
           <option selected>Not sure yet</option>
         </select>
       </label>
@@ -878,11 +1035,11 @@ footer{background:var(--paper);padding:40px 0 110px;color:var(--ink-3);font-size
     </div>
     <div class="faq rv">
       <details><summary>Who is the developer of Palm Springs?</summary><p>Palm Springs is an upcoming community by Nakheel, a member of Dubai Holding and the master developer behind Palm Jumeirah and Palm Jebel Ali.</p></details>
-      <details><summary>What is the starting price?</summary><p>Starting from AED 3.8M* (≈ €925k) for a 3-bedroom townhouse. 4-bedroom townhouses are expected from AED 4.6M (≈ €1.12M). Villa prices are available on request. *Indicative, subject to change at launch.</p></details>
-      <details><summary>What unit types and sizes are available?</summary><p>3-bedroom townhouses from about 2,326 sq ft (216 sq m), 4-bedroom townhouses of about 2,672–3,115 sq ft (248–289 sq m), 4-bedroom villas of about 4,041 sq ft (375 sq m) and 5-bedroom villas of about 4,921 sq ft (457 sq m), plus a collection of lagoon villas. Final layouts are confirmed at launch.</p></details>
-      <details><summary>What is the payment plan?</summary><p>The expected plan is 10% on booking, 50% during construction and 40% on handover. It will be confirmed by Nakheel at launch.</p></details>
+      <details><summary>What is the starting price?</summary><p>Starting from AED 3.8M* (≈ €925k) for a 3-bedroom mid-unit townhouse, up to AED 8.9M (≈ €2.17M) for a 5-bedroom villa. 4-bedroom townhouses are AED 4.6M–5.2M and the 4-bedroom villa is AED 7.0M. *Indicative, subject to Nakheel's confirmation.</p></details>
+      <details><summary>What unit types and sizes are available?</summary><p>3BR mid-unit townhouse (G+1, ~2,329 sq ft), 4BR corner townhouse Type 1 (G+1, ~2,672 sq ft), 4BR corner townhouse Type 2 (G+2, ~3,115 sq ft), 4BR villa (G+2, ~4,041 sq ft) and 5BR villa (G+2, ~4,921 sq ft), plus a collection of lagoon villas. Final layouts are confirmed at launch.</p></details>
+      <details><summary>What is the payment plan?</summary><p>The expected plan is 60% during construction and 40% on handover: 10% on booking, then 10% in Apr 2027, Sep 2027, Feb 2028 and Jul 2028, 5% in Dec 2028 and May 2029, and 40% on handover (expected Oct 2030). The 4% DLD fee is paid separately on booking. Subject to Nakheel's confirmation.</p></details>
       <details><summary>Does buying here qualify for a UAE Golden Visa?</summary><p>Property purchases of AED 2M and above can qualify for the UAE 10-year Golden Visa, subject to the criteria in force when you apply. Our team can walk you through the process.</p></details>
-      <details><summary>Where exactly is it located?</summary><p>In Jebel Ali, just below Palm Jebel Ali. It is about 5 minutes from Sheikh Mohammed Bin Zayed Road, 20 minutes from Al Maktoum International Airport (DWC) and 25 minutes from Dubai Marina Mall (approx. drive times).</p></details>
+      <details><summary>Where exactly is it located?</summary><p>In Jebel Ali, just below Palm Jebel Ali and close to Sheikh Zayed Road, Jebel Ali Port, JAFZA, Expo City Dubai and Al Maktoum International Airport (DWC). See the interactive map above for drive times.</p></details>
       <details><summary>Why register with D|R|P?</summary><p>We send you the launch information first, explain the EOI and booking process, and give you independent advice on unit selection, ROI and payment plans, at no extra cost to you.</p></details>
     </div>
   </div>
@@ -962,6 +1119,34 @@ const SITE_CONFIG = {
   GALLERY_MANIFEST: "images/palm-springs/images.json"
 };
 const EUR_PER_AED = 925000 / 3800000;         // CEO-confirmed: AED 3.8M ≈ €925k
+
+/* Location map. Edit names, coordinates and drive times here.
+   driveMin: approximate minutes by car (from Google Maps). Use null until confirmed: it then shows "TBC". */
+const PALM_SPRINGS = { name: "Palm Springs by Nakheel", lat: 24.9453, lng: 55.0319 };
+const LANDMARKS = [
+  { name: "Palm Jebel Ali",                  lat: 25.0019, lng: 54.9881, driveMin: 14 },   // from your earlier list – confirm
+  { name: "Jebel Ali Port / JAFZA",          lat: 24.9805, lng: 55.0599, driveMin: null },
+  { name: "Expo City Dubai",                 lat: 24.9635, lng: 55.1461, driveMin: null },
+  { name: "Al Maktoum Intl Airport (DWC)",   lat: 24.8962, lng: 55.1613, driveMin: 20 },   // from your earlier list – confirm
+  { name: "Dubai Marina",                    lat: 25.0786, lng: 55.1353, driveMin: 25 },   // earlier list said "Dubai Marina Mall" – confirm
+  { name: "Bluewaters Island",               lat: 25.0799, lng: 55.1219, driveMin: null },
+  { name: "Palm Jumeirah",                   lat: 25.1173, lng: 55.1351, driveMin: null },
+  { name: "Burj Al Arab",                    lat: 25.1414, lng: 55.1852, driveMin: null },
+  { name: "Dubai Intl Airport (DXB)",        lat: 25.2515, lng: 55.3667, driveMin: 35 }    // from your earlier list – confirm
+];
+
+/* Payment plan (expected, subject to Nakheel's confirmation). */
+const PAYMENT_PLAN = [
+  { label: "On booking",   date: "At launch",         pct: 10 },
+  { label: "Instalment 1", date: "Apr 2027",          pct: 10 },
+  { label: "Instalment 2", date: "Sep 2027",          pct: 10 },
+  { label: "Instalment 3", date: "Feb 2028",          pct: 10 },
+  { label: "Instalment 4", date: "Jul 2028",          pct: 10 },
+  { label: "Instalment 5", date: "Dec 2028",          pct: 5 },
+  { label: "Instalment 6", date: "May 2029",          pct: 5 },
+  { label: "On handover",  date: "Expected Oct 2030", pct: 40 }
+];
+const DLD_FEE_PCT = 4;
 /* ===================================================================== */
 
 (() => {
@@ -998,7 +1183,13 @@ const EUR_PER_AED = 925000 / 3800000;         // CEO-confirmed: AED 3.8M ≈ €
   };
   let cur = "AED";
   try { if (localStorage.getItem("ps_currency") === "EUR") cur = "EUR"; } catch (_) {}
+  const curListeners = [];
+  const fmtNum = n => Math.round(n).toLocaleString("en-US");
   const renderPrices = () => {
+    $$(".psf[data-aed]").forEach(el => {
+      const aed = +el.dataset.aed / +el.dataset.sqft, eur = aed * EUR_PER_AED;
+      el.innerHTML = cur === "AED" ? `AED ${fmtNum(aed)} <small>· ≈ €${fmtNum(eur)}</small>` : `≈ €${fmtNum(eur)} <small>· AED ${fmtNum(aed)}</small>`;
+    });
     $$(".pr[data-aed]").forEach(el => {
       const v = +el.dataset.aed;
       el.innerHTML = cur === "AED"
@@ -1006,6 +1197,7 @@ const EUR_PER_AED = 925000 / 3800000;         // CEO-confirmed: AED 3.8M ≈ €
         : `≈ ${fmtEUR(v)}* <small>· ${fmtAED(v)}</small>`;
     });
     $$("[data-cur]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.cur === cur)));
+    curListeners.forEach(f => f());
   };
   $$("[data-cur]").forEach(b => b.addEventListener("click", () => {
     cur = b.dataset.cur;
@@ -1150,6 +1342,192 @@ const EUR_PER_AED = 925000 / 3800000;         // CEO-confirmed: AED 3.8M ≈ €
     if (Math.abs(dx) > 45 && lbList.length > 1) lbStep(dx < 0 ? 1 : -1);
   });
 
+
+  /* ---------- payment calculator ---------- */
+  const calcEl = $("#calc"), calcSel = $("#calcUnit");
+  const eurFull = aed => "≈ €" + fmtNum(Math.round(aed * EUR_PER_AED / 100) * 100);
+  const renderCalc = () => {
+    if (!calcEl) return;
+    const price = +calcSel.selectedOptions[0].dataset.aed;
+    calcEl.classList.toggle("show-eur", cur === "EUR");
+    $("#calcBody").innerHTML = PAYMENT_PLAN.map(p => {
+      const amt = price * p.pct / 100;
+      return `<tr><td>${p.label}<small class="dt">${p.date}</small></td><td class="dcol">${p.date}</td><td>${p.pct}%</td><td class="amt">AED ${fmtNum(amt)}</td><td class="eurcol">${eurFull(amt)}</td></tr>`;
+    }).join("");
+    const dld = price * DLD_FEE_PCT / 100;
+    $("#calcFoot").innerHTML =
+      `<tr class="tot"><td>Purchase price</td><td class="dcol"></td><td>100%</td><td class="amt">AED ${fmtNum(price)}</td><td class="eurcol">${eurFull(price)}</td></tr>` +
+      `<tr class="dld"><td>DLD fee (paid on booking)</td><td class="dcol"></td><td>${DLD_FEE_PCT}%</td><td class="amt">AED ${fmtNum(dld)}</td><td class="eurcol">${eurFull(dld)}</td></tr>` +
+      `<tr class="tot"><td>Total incl. DLD fee</td><td class="dcol"></td><td></td><td class="amt">AED ${fmtNum(price + dld)}</td><td class="eurcol">${eurFull(price + dld)}</td></tr>`;
+  };
+  if (calcEl) { calcSel.addEventListener("change", renderCalc); curListeners.push(renderCalc); renderCalc(); }
+
+  /* ---------- location: landmark list + Leaflet map (lazy) ---------- */
+  const km = (a, b) => {
+    const R = 6371, r = x => x * Math.PI / 180;
+    const dLat = r(b.lat - a.lat), dLng = r(b.lng - a.lng);
+    const h = Math.sin(dLat / 2) ** 2 + Math.cos(r(a.lat)) * Math.cos(r(b.lat)) * Math.sin(dLng / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(h));
+  };
+  const driveTxt = l => l.driveMin ? `~${l.driveMin} min drive` : "Drive time TBC";
+  const lmList = $("#lmList");
+  LANDMARKS.forEach((l, i) => {
+    l.km = km(PALM_SPRINGS, l);
+    lmList.insertAdjacentHTML("beforeend",
+      `<li><button type="button" data-i="${i}"><span class="n">${l.name}</span><span class="t${l.driveMin ? "" : " tbc"}">${l.driveMin ? "~" + l.driveMin + " min" : "TBC"}</span><span class="d">${l.km.toFixed(1)} km straight-line · approx.</span></button></li>`);
+  });
+  let mapApi = null, pinned = null;
+  const setActive = i => {
+    $$("#lmList button").forEach(b => b.classList.toggle("active", +b.dataset.i === i));
+    if (mapApi) mapApi.highlight(i);
+  };
+  $$("#lmList button").forEach(b => {
+    const i = +b.dataset.i;
+    b.addEventListener("mouseenter", () => setActive(i));
+    b.addEventListener("focus", () => setActive(i));
+    b.addEventListener("mouseleave", () => setActive(pinned));
+    b.addEventListener("click", () => { pinned = pinned === i ? null : i; setActive(pinned === null ? i : pinned); });
+  });
+
+  const initMap = L => {
+    const el = $("#lmap");
+    el.innerHTML = "";
+    const touch = L.Browser.touch && L.Browser.mobile;
+    const map = L.map(el, { scrollWheelZoom: false, dragging: !touch, tap: false, zoomSnap: 0.25, maxZoom: 16 });
+    const ESRI = "https://server.arcgisonline.com/ArcGIS/rest/services/";
+    const esriAttr = 'Tiles &copy; <a href="https://www.esri.com" target="_blank" rel="noopener">Esri</a> &mdash; Esri, HERE, Garmin, &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors, and the GIS User Community';
+    const layers = {
+      // Light basemap (CARTO Positron now requires an API key, so this uses Esri Light Gray Canvas)
+      map: L.layerGroup([
+        L.tileLayer(ESRI + "Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", { maxZoom: 16, attribution: esriAttr }),
+        L.tileLayer(ESRI + "Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}", { maxZoom: 16 })
+      ]),
+      sat: L.layerGroup([
+        L.tileLayer(ESRI + "World_Imagery/MapServer/tile/{z}/{y}/{x}", { maxZoom: 18,
+          attribution: 'Tiles &copy; <a href="https://www.esri.com" target="_blank" rel="noopener">Esri</a> &mdash; Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community' }),
+        L.tileLayer(ESRI + "Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}", { maxZoom: 18 })
+      ])
+    };
+    const ps = [PALM_SPRINGS.lat, PALM_SPRINGS.lng];
+    const allBounds = L.latLngBounds([ps, ...LANDMARKS.map(l => [l.lat, l.lng])]);
+    map.fitBounds(allBounds, { padding: [36, 36] });
+    let base = layers.map.addTo(map);
+    $$(".seg-mini [data-layer]").forEach(b => b.addEventListener("click", () => {
+      const next = layers[b.dataset.layer];
+      if (next !== base) { map.removeLayer(base); base = next.addTo(map); }
+      $$(".seg-mini [data-layer]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    }));
+
+    // distance rings
+    const rings = L.layerGroup();
+    [5, 10, 20].forEach(r => {
+      L.circle(ps, { radius: r * 1000, color: "#3a3a3c", weight: 1, opacity: .35, dashArray: "2 5", fill: false, interactive: false }).addTo(rings);
+      L.marker([PALM_SPRINGS.lat + r / 111.32, PALM_SPRINGS.lng], { interactive: false, keyboard: false,
+        icon: L.divIcon({ className: "", html: `<span class="ring-lab">${r} km</span>`, iconSize: [0, 0] }) }).addTo(rings);
+    });
+    rings.addTo(map);
+    $("#ringsBtn").addEventListener("click", e => {
+      const on = e.currentTarget.getAttribute("aria-pressed") !== "true";
+      e.currentTarget.setAttribute("aria-pressed", String(on));
+      on ? rings.addTo(map) : map.removeLayer(rings);
+    });
+
+    // landmarks + route lines
+    const lines = [], marks = [];
+    LANDMARKS.forEach((l, i) => {
+      const line = L.polyline([ps, [l.lat, l.lng]], { color: "#f47b49", weight: 1.6, opacity: .55, dashArray: "5 7", interactive: false }).addTo(map);
+      const m = L.marker([l.lat, l.lng], { title: l.name, riseOnHover: true,
+        icon: L.divIcon({ className: "lm-icon", html: `<span class="lm-dot"></span><span class="lm-lab">${l.name}</span>`, iconSize: [12, 12], iconAnchor: [6, 6] }) }).addTo(map);
+      m.bindTooltip(`${driveTxt(l)} · ${l.km.toFixed(1)} km`, { direction: "top", offset: [0, -8], className: "drive" });
+      m.on("mouseover", () => setActive(i));
+      m.on("mouseout", () => setActive(pinned));
+      m.on("click", () => { pinned = i; setActive(i); });
+      lines.push(line); marks.push(m);
+    });
+    const highlight = i => {
+      lines.forEach((ln, j) => ln.setStyle(j === i ? { weight: 3.2, opacity: 1, dashArray: "8 6" } : { weight: 1.6, opacity: i === null ? .55 : .25, dashArray: "5 7" }));
+      marks.forEach((m, j) => {
+        const on = j === i;
+        const ic = m.getElement(); if (ic) ic.classList.toggle("on", on);
+        on ? m.openTooltip() : m.closeTooltip();
+      });
+      if (i !== null && i !== undefined) lines[i].bringToFront();
+    };
+
+    // Palm Springs marker
+    const psm = L.marker(ps, { zIndexOffset: 1000, title: PALM_SPRINGS.name,
+      icon: L.divIcon({ className: "ps-icon", html: '<span class="ps-ring"></span><span class="ps-pin"></span>', iconSize: [30, 40], iconAnchor: [15, 36], popupAnchor: [0, -34] }) }).addTo(map);
+    psm.bindPopup("<b>Palm Springs by Nakheel</b><br>Coming soon", { autoPan: false });
+
+    if (innerWidth > 640) psm.openPopup();   // on phones the popup opens on tap only
+
+    // scroll-wheel zoom only after a click; two-finger pan on touch
+    const hint = $("#mapHint"), whint = $("#mapHintWheel");
+    let ht;
+    const flash = h => { h.hidden = false; clearTimeout(ht); ht = setTimeout(() => { h.hidden = true; }, 1300); };
+    map.on("click focus", () => map.scrollWheelZoom.enable());
+    el.addEventListener("mouseleave", () => map.scrollWheelZoom.disable());
+    el.addEventListener("wheel", () => { if (!map.scrollWheelZoom.enabled()) flash(whint); }, { passive: true, capture: true });
+    if (touch) {
+      el.addEventListener("touchstart", e => {
+        if (e.touches.length > 1) { map.dragging.enable(); hint.hidden = true; }
+        else { map.dragging.disable(); flash(hint); }
+      }, { passive: true });
+      el.addEventListener("touchend", e => { if (!e.touches.length) map.dragging.disable(); }, { passive: true });
+    }
+    // Leaflet's zoom buttons use href="#": turn them into proper buttons
+    $$(".leaflet-control-zoom a", el).forEach(a => {
+      a.removeAttribute("href"); a.setAttribute("role", "button"); a.setAttribute("tabindex", "0");
+      a.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); a.click(); } });
+    });
+    mapApi = { highlight };
+    if (pinned !== null) highlight(pinned);
+  };
+
+  const LEAFLET = {
+    css: { href: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css", integrity: "sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" },
+    js:  { src: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js",   integrity: "sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==" }
+  };
+  let leafletRequested = false;
+  const loadLeaflet = () => {
+    if (leafletRequested) return; leafletRequested = true;
+    const link = Object.assign(document.createElement("link"), { rel: "stylesheet", crossOrigin: "anonymous", referrerPolicy: "no-referrer", ...LEAFLET.css });
+    document.head.appendChild(link);
+    const sc = Object.assign(document.createElement("script"), { async: true, crossOrigin: "anonymous", referrerPolicy: "no-referrer", ...LEAFLET.js });
+    sc.onload = () => { try { initMap(window.L); } catch (err) { console.warn("Map init failed", err); mapFail(); } };
+    sc.onerror = mapFail;
+    document.head.appendChild(sc);
+  };
+  function mapFail() {
+    const el = $("#lmap");
+    el.innerHTML = '<div class="lmap-ph">The interactive map could not load.<br>Use "Open in Google Maps" below.</div>';
+  }
+  if ("IntersectionObserver" in window) {
+    const mo = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { mo.disconnect(); loadLeaflet(); } }, { rootMargin: "500px 0px" });
+    mo.observe($("#location"));
+  } else loadLeaflet();
+
+  /* ---------- location images (map + optional annotated aerial) ---------- */
+  const LOCATION_IMAGES = [
+    { key: "location-map", title: "Location map", text: "Palm Springs below Palm Jebel Ali, between Sheikh Zayed Road and the coast. Not to scale." },
+    { key: "location-aerial", title: "Palm Springs from above", text: "The plot in relation to Palm Jebel Ali and Sheikh Zayed Road." }   // appears once location-aerial.jpg is added and tools/build_images.py is run
+  ];
+  const renderAerials = aerialItems => {
+    const box = $("#aerials");
+    LOCATION_IMAGES.forEach(def => {
+      const found = aerialItems.find(it => it.src.split("/").pop().replace(/\.[a-z0-9]+$/i, "") === def.key);
+      const show = it => {
+        const item = { src: it.src, alt: it.alt || def.title, caption: def.title, w: it.w, h: it.h };
+        const fig = document.createElement("figure");
+        fig.className = "aerial";
+        fig.innerHTML = `<button type="button" class="aerial-btn" aria-label="Open image: ${def.title}">${imgTag(item)}</button><figcaption><b>${def.title}</b> · ${def.text} <span class="ri">Representative imagery</span></figcaption>`;
+        fig.querySelector("button").addEventListener("click", () => lbOpen([item], 0));
+        box.appendChild(fig);
+      };
+      if (found) show(found);
+    });
+  };
+
   /* ---------- gallery + lagoon designs ---------- */
   const designName = src => {
     const s = src.split("/").pop().replace(/\.[a-z0-9]+$/i, "").toLowerCase()
@@ -1202,12 +1580,13 @@ const EUR_PER_AED = 925000 / 3800000;         // CEO-confirmed: AED 3.8M ≈ €
     .then(m => {
       const F = m.folders || {};
       const order = ["lagoon-villas", "exterior", "townhouses", "aerial", "interiors", "amenities"];
-      const items = order.flatMap(cat => (F[cat] || []).map(it => ({ ...it, cat })));
+      const items = order.flatMap(cat => (F[cat] || []).map(it => ({ ...it, cat }))).filter(it => !/\/aerial\/location-/.test(it.src));
       const lagoon = (F["lagoon-villas"] || []).map(it => ({ ...it, caption: it.caption || designName(it.src) }));
       renderGallery(items);
       renderLagoon(lagoon);
+      renderAerials(F.aerial || []);
     })
-    .catch(() => { renderGallery([]); renderLagoon([]); });
+    .catch(() => { renderGallery([]); renderLagoon([]); renderAerials([]); });
 })();
 </script>
 </body>

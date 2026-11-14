@@ -20,6 +20,15 @@ Edit the `SITE_CONFIG` block near the bottom of `index.html`. Every WhatsApp, ph
 
 `EUR_PER_AED` (just below the config) sets the EUR conversion: `925000 / 3800000` (AED 3.8M ≈ €925k).
 
+### Location map, payment plan
+Also in the config area of `index.html`:
+- `LANDMARKS`: name, coordinates and `driveMin` for each landmark on the interactive map. `driveMin: null` shows "TBC". Fill in minutes from Google Maps.
+- `PALM_SPRINGS`: the project pin (24.9453, 55.0319).
+- `PAYMENT_PLAN` and `DLD_FEE_PCT`: timeline and calculator.
+
+The map uses Leaflet 1.9.4 from cdnjs, loaded only when the Location section scrolls into view. Base map: Esri World Light Gray (CARTO Positron now requires an API key); satellite: Esri World Imagery.
+Unit prices and sizes are in the Homes & Prices cards (`data-aed`) and the calculator `<select>` options.
+
 ## 2. Images and gallery
 Put images in `images/palm-springs/<folder>/`:
 
@@ -30,7 +39,7 @@ Put images in `images/palm-springs/<folder>/`:
 | `townhouses/` | Townhouses |
 | `interiors/` | Interiors |
 | `amenities/` | Amenities |
-| `aerial/` | All tab only |
+| `aerial/` | All tab only. `location-map` and `location-aerial` are shown in the Location section instead |
 
 Because the site is plain static HTML, the gallery reads a manifest, `images/palm-springs/images.json`.
 After adding or removing images, regenerate it:

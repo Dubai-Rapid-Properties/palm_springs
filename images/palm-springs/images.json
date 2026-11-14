@@ -1,7 +1,14 @@
 {
-  "generated": "2026-11-14T07:23:01+00:00",
+  "generated": "2026-11-14T07:45:45+00:00",
   "folders": {
     "aerial": [
+      {
+        "src": "images/palm-springs/aerial/location-map.webp",
+        "w": 2000,
+        "h": 1333,
+        "alt": "Map showing Palm Springs below Palm Jebel Ali on Sheikh Zayed Road, with Palm Jumeirah, Bluewaters Island and Burj Al Arab along the coast (not to scale)",
+        "caption": "Location map"
+      },
       {
         "src": "images/palm-springs/aerial/palm-springs-aerial-sunset.webp",
         "w": 1674,
@@ -34,6 +41,13 @@
         "h": 667,
         "alt": "Aerial view of townhouse rows among landscaped streets (representative image)",
         "caption": "Townhouse community"
+      },
+      {
+        "src": "images/palm-springs/townhouses/townhouse-corner-units.webp",
+        "w": 1070,
+        "h": 688,
+        "alt": "Contemporary corner townhouses with roof terraces and landscaped streets (representative image)",
+        "caption": "Corner townhouses"
       },
       {
         "src": "images/palm-springs/townhouses/townhouse-row-sunset.webp",
