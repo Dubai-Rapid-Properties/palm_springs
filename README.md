@@ -42,7 +42,7 @@ python3 tools/build_images.py
 
 The script converts JPG/PNG to WebP (max 2000 px), records width/height (no layout shift), and builds alt text and captions from the file name.
 Lagoon villa file names become design names: `lagoon-villa-modern-01.jpg` → "Modern".
-Original JPG/PNGs are moved to `images/palm-springs/_originals/` (not deployed). You can hand-edit `alt`/`caption` in `images.json`; the script keeps your edits.
+Original JPG/PNGs are moved to `images/palm-springs/_originals/` (ignored by git and not deployed). You can hand-edit `alt`/`caption` in `images.json`; the script keeps your edits.
 Empty folders show a "Coming at launch" panel with a register button.
 
 ## 3. Lead form
