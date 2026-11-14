@@ -14,7 +14,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="videos/hero-poster.webp">
+<link rel="preload" as="image" href="videos/hero-poster.webp" media="(min-width: 701px)">
+<link rel="preload" as="image" href="videos/hero-poster-mobile.webp" media="(max-width: 700px)">
 <style>
 :root{
   --ivory:#fbf9f6; --sand:#f3eee7; --stone:#e7e0d6; --white:#fff;
@@ -116,6 +117,7 @@ h2 em,h1 em,h3 em{font-style:italic;font-weight:300}
 .hero{min-height:100vh;min-height:100svh;padding:0;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;background:var(--night);overflow:hidden}
 .hero-media{position:absolute;inset:0}
 .hero-media img,.hero-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-media video::-webkit-media-controls{display:none!important}
 .hero-media video{opacity:0;transition:opacity 1.2s}
 .hero-media video.ready{opacity:1}
 .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,18,20,.55) 0%,rgba(18,18,20,.05) 28%,rgba(18,18,20,.1) 50%,rgba(18,18,20,.82) 100%),linear-gradient(90deg,rgba(18,18,20,.45),rgba(18,18,20,0) 60%)}
@@ -524,6 +526,7 @@ footer{background:var(--night);color:rgba(242,238,232,.55);padding:56px 0 110px;
   .nav .logo{height:38px}
   .nav .nav-right .btn,.nav .cur{display:none}
   .hero-inner{padding-top:120px;padding-bottom:210px}
+  .hero-media::after{background:linear-gradient(180deg,rgba(18,18,20,.6) 0%,rgba(18,18,20,.42) 35%,rgba(18,18,20,.5) 60%,rgba(18,18,20,.88) 100%)}
   .hero-facts .wrap{grid-template-columns:repeat(2,1fr);padding:0}
   .hero-facts div{padding:14px 16px;border-left:0;border-top:1px solid rgba(255,255,255,.12)}
   .hero-facts div:nth-child(even){border-left:1px solid rgba(255,255,255,.12)}
@@ -613,8 +616,12 @@ footer{background:var(--night);color:rgba(242,238,232,.55);padding:56px 0 110px;
 <!-- HERO -->
 <section class="hero" aria-label="Palm Springs by Nakheel">
   <div class="hero-media">
-    <img src="videos/hero-poster.webp" alt="Lagoon and landscaped gardens at Palm Springs by Nakheel" width="1280" height="720" fetchpriority="high">
-    <video id="heroVideo" muted loop playsinline preload="none" aria-hidden="true" data-src="videos/hero-loop.mp4"></video>
+    <picture>
+      <source media="(max-width: 700px)" srcset="videos/hero-poster-mobile.webp" width="720" height="1280">
+      <img src="videos/hero-poster.webp" alt="Water gardens and lagoons at Palm Springs by Nakheel" width="1920" height="1080" fetchpriority="high">
+    </picture>
+    <video id="heroVideo" muted loop playsinline autoplay preload="none" disablepictureinpicture aria-hidden="true" tabindex="-1"
+      data-src="videos/hero-loop.mp4" data-src-mobile="videos/hero-loop-mobile.mp4"></video>
   </div>
   <span class="hero-note ri">Developer render</span>
   <div class="wrap hero-inner">
@@ -1749,10 +1756,20 @@ const DLD_FEE_PCT = 4;
   const v = document.getElementById("heroVideo");
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const save = navigator.connection && navigator.connection.saveData;
-  if (v && !reduce && !save && innerWidth >= 700) {
-    v.src = v.dataset.src;
-    v.addEventListener("canplay", () => { v.classList.add("ready"); v.play().catch(() => {}); }, { once: true });
-    v.load();
+  // Phones get a portrait 720x1280 file (~1.9 MB), larger screens a 1080p file. If the browser blocks autoplay
+  // (e.g. iPhone Low Power Mode) the poster image simply stays.
+  if (v && !reduce && !save) {
+    const mobile = matchMedia("(max-width: 700px)").matches;
+    v.muted = true; v.defaultMuted = true; v.playsInline = true;
+    v.setAttribute("muted", ""); v.setAttribute("playsinline", ""); v.setAttribute("webkit-playsinline", "");
+    v.addEventListener("playing", () => v.classList.add("ready"), { once: true });
+    v.src = mobile ? v.dataset.srcMobile : v.dataset.src;
+    const tryPlay = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+    tryPlay();
+    v.addEventListener("loadeddata", tryPlay, { once: true });
+    // some phones only allow playback after the first touch
+    addEventListener("touchstart", () => { if (v.paused) tryPlay(); }, { once: true, passive: true });
+    document.addEventListener("visibilitychange", () => { if (!document.hidden && v.paused && v.classList.contains("ready")) tryPlay(); });
   }
   // Mobile menu
   const mb = document.getElementById("menuBtn"), mn = document.getElementById("mnav"), mc = document.getElementById("menuClose");
