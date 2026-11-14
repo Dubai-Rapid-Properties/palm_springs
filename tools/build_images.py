@@ -36,7 +36,7 @@ ROOT = Path(__file__).resolve().parent.parent
 BASE = ROOT / "images" / "palm-springs"
 ORIGINALS = BASE / "_originals"
 MANIFEST = BASE / "images.json"
-FOLDERS = ["aerial", "exterior", "lagoon-villas", "townhouses", "interiors", "amenities"]
+FOLDERS = ["aerial", "exterior", "lagoon-villas", "townhouses", "interiors", "amenities", "floorplans"]
 LABELS = {
     "aerial": "Aerial view",
     "exterior": "Villa exterior",
@@ -44,6 +44,7 @@ LABELS = {
     "townhouses": "Townhouse",
     "interiors": "Interior",
     "amenities": "Amenity",
+    "floorplans": "Floor plan",
 }
 MAX_SIDE = 2000
 QUALITY = 80

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-14T07:45:45+00:00",
+  "generated": "2026-11-14T08:02:11+00:00",
   "folders": {
     "aerial": [
       {
@@ -26,6 +26,13 @@
         "caption": "Standalone villa with pool"
       },
       {
+        "src": "images/palm-springs/exterior/villa-garden-pool.webp",
+        "w": 1376,
+        "h": 768,
+        "alt": "Two-storey villa with a covered terrace, private pool and tropical garden (representative image)",
+        "caption": "Villa with garden pool"
+      },
+      {
         "src": "images/palm-springs/exterior/villas-with-private-pools.webp",
         "w": 1673,
         "h": 940,
@@ -33,7 +40,15 @@
         "caption": "Villas with private pools"
       }
     ],
-    "lagoon-villas": [],
+    "lagoon-villas": [
+      {
+        "src": "images/palm-springs/lagoon-villas/lagoon-villa-contemporary-01.webp",
+        "w": 1600,
+        "h": 902,
+        "alt": "Contemporary three-storey villas facing a swimmable lagoon with a sandy beach and palm trees (representative image)",
+        "caption": "Contemporary"
+      }
+    ],
     "townhouses": [
       {
         "src": "images/palm-springs/townhouses/townhouse-community-aerial.webp",
@@ -50,6 +65,13 @@
         "caption": "Corner townhouses"
       },
       {
+        "src": "images/palm-springs/townhouses/townhouse-row-elevation.webp",
+        "w": 1600,
+        "h": 1000,
+        "alt": "Front view of a row of two-storey townhouses with carports and landscaped frontage (representative image)",
+        "caption": "Townhouse row"
+      },
+      {
         "src": "images/palm-springs/townhouses/townhouse-row-sunset.webp",
         "w": 1038,
         "h": 666,
@@ -59,11 +81,11 @@
     ],
     "interiors": [
       {
-        "src": "images/palm-springs/interiors/double-height-lounge.webp",
-        "w": 1000,
-        "h": 1000,
-        "alt": "Bright double-height lounge with large windows and plants (representative image)",
-        "caption": "Double-height lounge"
+        "src": "images/palm-springs/interiors/double-height-living-dining.webp",
+        "w": 1400,
+        "h": 788,
+        "alt": "Double-height living and dining space with tall glazing onto a landscaped garden at sunset (representative image)",
+        "caption": "Double-height living"
       },
       {
         "src": "images/palm-springs/interiors/living-room-sunset-view.webp",
@@ -73,13 +95,14 @@
         "caption": "Living room with sea view"
       },
       {
-        "src": "images/palm-springs/interiors/master-bedroom.webp",
-        "w": 1000,
-        "h": 1000,
-        "alt": "Calm master bedroom with full-height glazing (representative image)",
-        "caption": "Master bedroom"
+        "src": "images/palm-springs/interiors/villa-living-dining-pool-view.webp",
+        "w": 1400,
+        "h": 786,
+        "alt": "Open-plan villa living and dining room with floor-to-ceiling glass opening onto a private pool and garden (representative image)",
+        "caption": "Villa living & dining"
       }
     ],
-    "amenities": []
+    "amenities": [],
+    "floorplans": []
   }
 }

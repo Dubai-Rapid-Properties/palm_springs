@@ -164,6 +164,7 @@ section{padding:104px 0;position:relative;scroll-margin-top:70px}
 .slider{position:relative}
 .track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .track::-webkit-scrollbar{display:none}
+.track.single .slide{flex-basis:100%}
 .slide{flex:0 0 82%;scroll-snap-align:start;position:relative;cursor:zoom-in;background:var(--paper)}
 .slide img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 .slide .meta{display:flex;justify-content:space-between;align-items:baseline;padding:14px 2px 0;gap:10px}
@@ -479,6 +480,36 @@ footer{background:var(--paper);padding:40px 0 110px;color:var(--ink-3);font-size
   .calc td.amt{white-space:nowrap}
 }
 
+/* ===== v4: films + floor plans ===== */
+.unit-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto}
+.unit-actions .btn{padding:14px 8px;width:100%}
+.unit .btn{margin-top:0}
+.films{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.film{margin:0}
+.film video{width:100%;height:auto;aspect-ratio:16/9;background:#1d1d1f;display:block}
+.film figcaption{padding:12px 2px 0;font-size:.84rem;color:var(--ink-2)}
+.film figcaption b{font-family:var(--serif);font-weight:400;font-size:1.1rem;color:var(--ink)}
+.film .ri{color:var(--ink-3);margin-left:6px}
+.fp{display:grid;grid-template-columns:.95fr 1.25fr;gap:28px;align-items:start}
+.fp-list{list-style:none;border-top:1px solid var(--line-2)}
+.fp-item{width:100%;display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:center;text-align:left;padding:18px 12px 18px 0;border-bottom:1px solid var(--line-2);transition:padding .2s,background .2s}
+.fp-item:hover{padding-left:8px}
+.fp-item[aria-pressed="true"]{background:var(--paper);padding-left:12px;box-shadow:inset 2px 0 0 var(--orange)}
+.fp-name{font-family:var(--serif);font-size:1.15rem;color:var(--ink)}
+.fp-meta{grid-column:1;font-size:.8rem;color:var(--ink-3)}
+.fp-arr{grid-row:1/3;grid-column:2;width:20px;height:20px;stroke:var(--ink-3);fill:none;stroke-width:1.5;transition:transform .2s,stroke .2s}
+.fp-item[aria-pressed="true"] .fp-arr{stroke:var(--orange-ink);transform:translateX(4px)}
+.fp-view{padding:0;overflow:hidden}
+.fp-fig{position:relative;margin:0;background:var(--paper);aspect-ratio:3/2;display:grid;place-items:center;cursor:default}
+.fp-fig img{width:100%;height:100%;object-fit:contain}
+.fp-fig.has-plan{cursor:zoom-in;background:#fff}
+.fp-fig:not(.has-plan)::after{content:"";position:absolute;inset:0;background:rgba(246,244,241,.3)}
+.fp-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:18px 20px;border-top:1px solid var(--line)}
+.fp-foot b{display:block;font-family:var(--serif);font-weight:400;font-size:1.15rem}
+.fp-foot span{font-size:.8rem;color:var(--ink-3)}
+@media (max-width:1000px){.fp{grid-template-columns:1fr}.films{grid-template-columns:1fr}}
+@media (max-width:640px){.fp-name{font-size:1.02rem}.fp-foot .btn{width:100%}}
+
 /* reveal */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
 .rv.in{opacity:1;transform:none}
@@ -553,6 +584,7 @@ footer{background:var(--paper);padding:40px 0 110px;color:var(--ink-3);font-size
     </a>
     <nav class="nav-links" aria-label="Main">
       <a href="#homes">Homes &amp; Prices</a>
+      <a href="#floor-plans" class="hide-md">Floor Plans</a>
       <a href="#payment-plan" class="hide-md">Payment Plan</a>
       <a href="#gallery">Gallery</a>
       <a href="#location" class="hide-md">Location</a>
@@ -625,87 +657,183 @@ footer{background:var(--paper);padding:40px 0 110px;color:var(--ink-3);font-size
       <div class="sec-head rv">
         <span class="eyebrow">Homes &amp; Prices</span>
         <h2>The full price list</h2>
-        <p class="lead">Five home types across townhouses and villas, from AED 3.8M to AED 8.9M*. Tap "Get Floor Plan" on any home to receive its layout.</p>
+        <p class="lead">Aliso townhouses and Rancho villas, from AED 3.8M to AED 8.9M*. Open any floor plan below, or request the full PDF set.</p>
       </div>
       <div class="cur rv" role="group" aria-label="Currency"><button type="button" data-cur="AED" aria-pressed="true">AED</button><button type="button" data-cur="EUR" aria-pressed="false">EUR</button></div>
     </div>
-    <div class="ugroup rv"><h3>Townhouses</h3><span>3 &amp; 4 bedrooms · G+1 and G+2</span></div>
+    <div class="ugroup rv"><h3>Aliso Townhouses</h3><span>3 &amp; 4 bedrooms · G+1 and G+2</span></div>
     <div class="units u3">
-      <article class="card unit rv">
-        <figure><img src="images/palm-springs/townhouses/townhouse-row-sunset.webp" alt="Row of contemporary three-bedroom mid-unit townhouses with gardens at sunset" width="1038" height="666" loading="lazy"><figcaption class="cap ri">Representative imagery</figcaption></figure>
+      <article class="card unit rv" id="unit-th3-mid">
+        <figure><img src="images/palm-springs/townhouses/townhouse-row-elevation.webp" alt="Row of two-storey three-bedroom Aliso townhouses with carports and landscaped frontage" width="1600" height="1000" loading="lazy" style="object-position:center 72%"><figcaption class="cap ri">Representative imagery</figcaption></figure>
         <div class="unit-body">
           <span class="k">Townhouse · G+1</span>
-          <h3>3BR Townhouse</h3>
-          <div class="variant">Mid unit</div>
+          <h3>3BR Aliso Townhouse</h3>
+          <div class="variant">Middle unit</div>
           <div><div class="from">Price*</div><div class="pbig pr" data-aed="3800000">AED 3.8M* <small>· ≈ €925k</small></div></div>
           <ul class="rows">
-            <li><span>Size</span><b>~2,329 sq ft <small>(216 sq m)</small></b></li>
-            <li><span>Price per sq ft</span><b class="psf" data-aed="3800000" data-sqft="2329">AED 1,632</b></li>
+            <li><span>Covered area</span><b>~2,329 sq ft <small>(216 sq m)</small></b></li>
+            <li><span>Plot</span><b>~2,178 sq ft <small>(202 sq m)</small></b></li>
+            <li><span>Price per sq ft</span><b class="psf" data-aed="3800000" data-sqft="2328.6">AED 1,632</b></li>
           </ul>
-          <a href="#register" class="btn btn-dark" data-unit="3BR Townhouse – Mid unit (G+1)" data-cta="card_floor_plan_th3-mid">Get Floor Plan</a>
+          <div class="unit-actions">
+            <a href="#floor-plans" class="btn btn-outline js-fp-open" data-fp="th3-mid">View Floor Plan</a>
+            <a href="#register" class="btn btn-dark" data-unit="3BR Aliso Townhouse – Middle unit (G+1)" data-cta="card_floor_plan_th3-mid">Get Floor Plan</a>
+          </div>
         </div>
       </article>
-      <article class="card unit rv">
-        <figure><img src="images/palm-springs/townhouses/townhouse-community-aerial.webp" alt="Aerial view of four-bedroom corner townhouses among landscaped streets" width="1037" height="667" loading="lazy"><figcaption class="cap ri">Representative imagery</figcaption></figure>
+      <article class="card unit rv" id="unit-th4-t1">
+        <figure><img src="images/palm-springs/townhouses/townhouse-community-aerial.webp" alt="Aerial view of four-bedroom corner Aliso townhouses among landscaped streets" width="1037" height="667" loading="lazy"><figcaption class="cap ri">Representative imagery</figcaption></figure>
         <div class="unit-body">
           <span class="k">Townhouse · G+1</span>
-          <h3>4BR Townhouse</h3>
-          <div class="variant">Type 1 – Corner</div>
+          <h3>4BR Aliso Townhouse</h3>
+          <div class="variant">Type 1 · Corner unit</div>
           <div><div class="from">Price*</div><div class="pbig pr" data-aed="4600000">AED 4.6M* <small>· ≈ €1.12M</small></div></div>
           <ul class="rows">
-            <li><span>Size</span><b>~2,672 sq ft <small>(248 sq m)</small></b></li>
-            <li><span>Price per sq ft</span><b class="psf" data-aed="4600000" data-sqft="2672">AED 1,722</b></li>
+            <li><span>Covered area</span><b>~2,672 sq ft <small>(248 sq m)</small></b></li>
+            <li><span>Plot</span><b>~3,269 sq ft <small>(304 sq m)</small></b></li>
+            <li><span>Price per sq ft</span><b class="psf" data-aed="4600000" data-sqft="2672.0">AED 1,722</b></li>
           </ul>
-          <a href="#register" class="btn btn-dark" data-unit="4BR Townhouse Type 1 – Corner (G+1)" data-cta="card_floor_plan_th4-t1">Get Floor Plan</a>
+          <div class="unit-actions">
+            <a href="#floor-plans" class="btn btn-outline js-fp-open" data-fp="th4-t1">View Floor Plan</a>
+            <a href="#register" class="btn btn-dark" data-unit="4BR Aliso Townhouse Type 1 – Corner (G+1)" data-cta="card_floor_plan_th4-t1">Get Floor Plan</a>
+          </div>
         </div>
       </article>
-      <article class="card unit rv">
-        <figure><img src="images/palm-springs/townhouses/townhouse-corner-units.webp" alt="Three-storey four-bedroom corner townhouses with roof terraces" width="1070" height="688" loading="lazy"><figcaption class="cap ri">Representative imagery</figcaption></figure>
+      <article class="card unit rv" id="unit-th4-t2">
+        <figure><img src="images/palm-springs/townhouses/townhouse-corner-units.webp" alt="Three-storey four-bedroom corner Aliso townhouses with roof terraces" width="1070" height="688" loading="lazy"><figcaption class="cap ri">Representative imagery</figcaption></figure>
         <div class="unit-body">
           <span class="k">Townhouse · G+2</span>
-          <h3>4BR Townhouse</h3>
-          <div class="variant">Type 2 – Corner</div>
+          <h3>4BR Aliso Townhouse</h3>
+          <div class="variant">Type 2 · Corner unit</div>
           <div><div class="from">Price*</div><div class="pbig pr" data-aed="5200000">AED 5.2M* <small>· ≈ €1.27M</small></div></div>
           <ul class="rows">
-            <li><span>Size</span><b>~3,115 sq ft <small>(289 sq m)</small></b></li>
-            <li><span>Price per sq ft</span><b class="psf" data-aed="5200000" data-sqft="3115">AED 1,669</b></li>
+            <li><span>Covered area</span><b>~3,115 sq ft <small>(289 sq m)</small></b></li>
+            <li><span>Plot</span><b>~3,435 sq ft <small>(319 sq m)</small></b></li>
+            <li><span>Price per sq ft</span><b class="psf" data-aed="5200000" data-sqft="3115.4">AED 1,669</b></li>
           </ul>
-          <a href="#register" class="btn btn-dark" data-unit="4BR Townhouse Type 2 – Corner (G+2)" data-cta="card_floor_plan_th4-t2">Get Floor Plan</a>
+          <div class="unit-actions">
+            <a href="#floor-plans" class="btn btn-outline js-fp-open" data-fp="th4-t2">View Floor Plan</a>
+            <a href="#register" class="btn btn-dark" data-unit="4BR Aliso Townhouse Type 2 – Corner (G+2)" data-cta="card_floor_plan_th4-t2">Get Floor Plan</a>
+          </div>
         </div>
       </article>
     </div>
-    <div class="ugroup rv"><h3>Villas</h3><span>4 &amp; 5 bedrooms · G+2</span></div>
+    <div class="ugroup rv"><h3>Rancho Villas</h3><span>4 &amp; 5 bedrooms · G+2</span></div>
     <div class="units u2">
-      <article class="card unit rv">
-        <figure><img src="images/palm-springs/exterior/standalone-villa-private-pool.webp" alt="Four-bedroom standalone villa with a private pool and landscaped garden" width="1037" height="666" loading="lazy"><figcaption class="cap ri">Representative imagery</figcaption></figure>
+      <article class="card unit rv" id="unit-v4">
+        <figure><img src="images/palm-springs/exterior/villa-garden-pool.webp" alt="Four-bedroom Rancho villa with a covered terrace, private pool and tropical garden" width="1376" height="768" loading="lazy"><figcaption class="cap ri">Representative imagery</figcaption></figure>
         <div class="unit-body">
           <span class="k">Villa · G+2</span>
-          <h3>4BR Villa</h3>
+          <h3>4BR Rancho Villa</h3>
           <div class="variant">Standalone</div>
           <div><div class="from">Price*</div><div class="pbig pr" data-aed="7000000">AED 7M* <small>· ≈ €1.70M</small></div></div>
           <ul class="rows">
-            <li><span>Size</span><b>~4,041 sq ft <small>(375 sq m)</small></b></li>
-            <li><span>Price per sq ft</span><b class="psf" data-aed="7000000" data-sqft="4041">AED 1,732</b></li>
+            <li><span>Covered area</span><b>~4,041 sq ft <small>(375 sq m)</small></b></li>
+            <li><span>Plot</span><b>~5,158 sq ft <small>(479 sq m)</small></b></li>
+            <li><span>Price per sq ft</span><b class="psf" data-aed="7000000" data-sqft="4041.4">AED 1,732</b></li>
           </ul>
-          <a href="#register" class="btn btn-dark" data-unit="4BR Villa (G+2)" data-cta="card_floor_plan_v4">Get Floor Plan</a>
+          <div class="unit-actions">
+            <a href="#floor-plans" class="btn btn-outline js-fp-open" data-fp="v4">View Floor Plan</a>
+            <a href="#register" class="btn btn-dark" data-unit="4BR Rancho Villa (G+2)" data-cta="card_floor_plan_v4">Get Floor Plan</a>
+          </div>
         </div>
       </article>
-      <article class="card unit rv">
-        <figure><img src="images/palm-springs/exterior/villas-with-private-pools.webp" alt="Five-bedroom villas with private pools along a palm-lined street at sunset" width="1673" height="940" loading="lazy"><figcaption class="cap ri">Representative imagery</figcaption></figure>
+      <article class="card unit rv" id="unit-v5">
+        <figure><img src="images/palm-springs/lagoon-villas/lagoon-villa-contemporary-01.webp" alt="Three-storey five-bedroom Rancho villas facing a swimmable lagoon with a sandy beach" width="1600" height="902" loading="lazy"><figcaption class="cap ri">Representative imagery</figcaption></figure>
         <div class="unit-body">
           <span class="k">Villa · G+2</span>
-          <h3>5BR Villa</h3>
+          <h3>5BR Rancho Villa</h3>
           <div class="variant">Standalone</div>
           <div><div class="from">Price*</div><div class="pbig pr" data-aed="8900000">AED 8.9M* <small>· ≈ €2.17M</small></div></div>
           <ul class="rows">
-            <li><span>Size</span><b>~4,921 sq ft <small>(457 sq m)</small></b></li>
-            <li><span>Price per sq ft</span><b class="psf" data-aed="8900000" data-sqft="4921">AED 1,809</b></li>
+            <li><span>Covered area</span><b>~4,921 sq ft <small>(457 sq m)</small></b></li>
+            <li><span>Plot</span><b>~6,065 sq ft <small>(563 sq m)</small></b></li>
+            <li><span>Price per sq ft</span><b class="psf" data-aed="8900000" data-sqft="4921.4">AED 1,808</b></li>
           </ul>
-          <a href="#register" class="btn btn-dark" data-unit="5BR Villa (G+2)" data-cta="card_floor_plan_v5">Get Floor Plan</a>
+          <div class="unit-actions">
+            <a href="#floor-plans" class="btn btn-outline js-fp-open" data-fp="v5">View Floor Plan</a>
+            <a href="#register" class="btn btn-dark" data-unit="5BR Rancho Villa (G+2)" data-cta="card_floor_plan_v5">Get Floor Plan</a>
+          </div>
         </div>
       </article>
     </div>
-    <p class="note rv">*All prices, sizes and floor counts are indicative, subject to Nakheel's confirmation. EUR amounts are approximate conversions (AED 3.8M ≈ €925k). Imagery is representative only.</p>
+    <p class="note rv">*All prices, sizes and floor counts are indicative, subject to Nakheel's confirmation. Covered area and plot sizes are approximate. EUR amounts are approximate conversions (AED 3.8M ≈ €925k). Imagery is representative only.</p>
+  </div>
+</section>
+
+<!-- FILMS -->
+<section id="films" class="bg-paper">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Films</span>
+      <h2>Step inside Palm Springs</h2>
+      <p class="lead">Two short walkthroughs: an Aliso townhouse and a Rancho villa, from the street to the garden.</p>
+    </div>
+    <div class="films">
+      <figure class="film rv">
+        <video controls preload="none" playsinline width="1280" height="720" poster="videos/palm-springs-townhouse-poster.webp" aria-label="Aliso townhouse walkthrough film">
+          <source src="videos/palm-springs-townhouse.mp4" type="video/mp4">
+        </video>
+        <figcaption><b>Aliso Townhouse</b> · 0:36 walkthrough <span class="ri">Developer render</span></figcaption>
+      </figure>
+      <figure class="film rv">
+        <video controls preload="none" playsinline width="1280" height="720" poster="videos/palm-springs-villa-poster.webp" aria-label="Rancho villa walkthrough film">
+          <source src="videos/palm-springs-villa.mp4" type="video/mp4">
+        </video>
+        <figcaption><b>Rancho Villa</b> · 0:39 walkthrough <span class="ri">Developer render</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- FLOOR PLANS -->
+<section id="floor-plans">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Floor Plans</span>
+      <h2>Choose a layout</h2>
+      <p class="lead">Select a home to see its floor plan. Ask us for the full PDF set with every level and room dimension.</p>
+    </div>
+    <div class="fp rv">
+      <ul class="fp-list" id="fpList">
+        <li><button type="button" class="fp-item" data-fp="th3-mid" data-unit="3BR Aliso Townhouse – Middle unit (G+1)" aria-pressed="false">
+          <span class="fp-name">3-Bedroom Aliso Townhouse (G+1)</span>
+          <span class="fp-meta">Middle unit · 2,329 sq ft covered · 2,178 sq ft plot</span>
+          <svg class="fp-arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button></li>
+        <li><button type="button" class="fp-item" data-fp="th4-t1" data-unit="4BR Aliso Townhouse Type 1 – Corner (G+1)" aria-pressed="false">
+          <span class="fp-name">4-Bedroom Aliso Townhouse (G+1)</span>
+          <span class="fp-meta">Type 1 · Corner unit · 2,672 sq ft covered · 3,269 sq ft plot</span>
+          <svg class="fp-arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button></li>
+        <li><button type="button" class="fp-item" data-fp="th4-t2" data-unit="4BR Aliso Townhouse Type 2 – Corner (G+2)" aria-pressed="false">
+          <span class="fp-name">4-Bedroom Aliso Townhouse (G+2)</span>
+          <span class="fp-meta">Type 2 · Corner unit · 3,115 sq ft covered · 3,435 sq ft plot</span>
+          <svg class="fp-arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button></li>
+        <li><button type="button" class="fp-item" data-fp="v4" data-unit="4BR Rancho Villa (G+2)" aria-pressed="false">
+          <span class="fp-name">4-Bedroom Rancho Villa (G+2)</span>
+          <span class="fp-meta">Standalone · 4,041 sq ft covered · 5,158 sq ft plot</span>
+          <svg class="fp-arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button></li>
+        <li><button type="button" class="fp-item" data-fp="v5" data-unit="5BR Rancho Villa (G+2)" aria-pressed="false">
+          <span class="fp-name">5-Bedroom Rancho Villa (G+2)</span>
+          <span class="fp-meta">Standalone · 4,921 sq ft covered · 6,065 sq ft plot</span>
+          <svg class="fp-arr" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button></li>
+      </ul>
+      <div class="fp-view card">
+        <figure class="fp-fig" id="fpFig">
+          <img id="fpImg" src="images/ps-floorplan-blur.webp" alt="Floor plan preview" width="1000" height="667" loading="lazy">
+          <span class="lock" id="fpLock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Floor plan on request</span>
+        </figure>
+        <div class="fp-foot">
+          <div><b id="fpTitle">3-Bedroom Aliso Townhouse (G+1)</b><span id="fpSub">Middle unit</span></div>
+          <a href="#register" class="btn btn-orange" id="fpCta" data-unit="3BR Aliso Townhouse – Middle unit (G+1)" data-cta="floorplan_th3-mid">Get This Floor Plan</a>
+        </div>
+      </div>
+    </div>
+    <p class="note rv">Floor plans are indicative and subject to Nakheel's final design. Sizes are approximate.</p>
   </div>
 </section>
 
@@ -737,11 +865,11 @@ footer{background:var(--paper);padding:40px 0 110px;color:var(--ink-3);font-size
         <div><h3>Payment calculator</h3><p>Pick a home to see each instalment.</p></div>
         <label class="calc-pick">Home
           <select id="calcUnit">
-            <option value="th3-mid" data-aed="3800000">3BR Townhouse – Mid unit (G+1) · AED 3.8M</option>
-            <option value="th4-t1" data-aed="4600000">4BR Townhouse Type 1 – Corner (G+1) · AED 4.6M</option>
-            <option value="th4-t2" data-aed="5200000">4BR Townhouse Type 2 – Corner (G+2) · AED 5.2M</option>
-            <option value="v4" data-aed="7000000">4BR Villa (G+2) · AED 7M</option>
-            <option value="v5" data-aed="8900000">5BR Villa (G+2) · AED 8.9M</option>
+            <option value="th3-mid" data-aed="3800000">3BR Aliso Townhouse – Middle unit (G+1) · AED 3.8M</option>
+            <option value="th4-t1" data-aed="4600000">4BR Aliso Townhouse Type 1 – Corner (G+1) · AED 4.6M</option>
+            <option value="th4-t2" data-aed="5200000">4BR Aliso Townhouse Type 2 – Corner (G+2) · AED 5.2M</option>
+            <option value="v4" data-aed="7000000">4BR Rancho Villa (G+2) · AED 7M</option>
+            <option value="v5" data-aed="8900000">5BR Rancho Villa (G+2) · AED 8.9M</option>
           </select>
         </label>
       </div>
@@ -982,11 +1110,11 @@ footer{background:var(--paper);padding:40px 0 110px;color:var(--ink-3);font-size
       <label>Email <span class="opt">(optional)</span><input name="email" type="email" autocomplete="email" placeholder="you@email.com"><span class="ferr" id="e-email">Please check your email address.</span></label>
       <label>Which home are you interested in?
         <select name="unit">
-          <option>3BR Townhouse – Mid unit (G+1)</option>
-          <option>4BR Townhouse Type 1 – Corner (G+1)</option>
-          <option>4BR Townhouse Type 2 – Corner (G+2)</option>
-          <option>4BR Villa (G+2)</option>
-          <option>5BR Villa (G+2)</option>
+          <option>3BR Aliso Townhouse – Middle unit (G+1)</option>
+          <option>4BR Aliso Townhouse Type 1 – Corner (G+1)</option>
+          <option>4BR Aliso Townhouse Type 2 – Corner (G+2)</option>
+          <option>4BR Rancho Villa (G+2)</option>
+          <option>5BR Rancho Villa (G+2)</option>
           <option selected>Not sure yet</option>
         </select>
       </label>
@@ -1035,8 +1163,8 @@ footer{background:var(--paper);padding:40px 0 110px;color:var(--ink-3);font-size
     </div>
     <div class="faq rv">
       <details><summary>Who is the developer of Palm Springs?</summary><p>Palm Springs is an upcoming community by Nakheel, a member of Dubai Holding and the master developer behind Palm Jumeirah and Palm Jebel Ali.</p></details>
-      <details><summary>What is the starting price?</summary><p>Starting from AED 3.8M* (≈ €925k) for a 3-bedroom mid-unit townhouse, up to AED 8.9M (≈ €2.17M) for a 5-bedroom villa. 4-bedroom townhouses are AED 4.6M–5.2M and the 4-bedroom villa is AED 7.0M. *Indicative, subject to Nakheel's confirmation.</p></details>
-      <details><summary>What unit types and sizes are available?</summary><p>3BR mid-unit townhouse (G+1, ~2,329 sq ft), 4BR corner townhouse Type 1 (G+1, ~2,672 sq ft), 4BR corner townhouse Type 2 (G+2, ~3,115 sq ft), 4BR villa (G+2, ~4,041 sq ft) and 5BR villa (G+2, ~4,921 sq ft), plus a collection of lagoon villas. Final layouts are confirmed at launch.</p></details>
+      <details><summary>What is the starting price?</summary><p>Starting from AED 3.8M* (≈ €925k) for a 3-bedroom Aliso townhouse, up to AED 8.9M (≈ €2.17M) for a 5-bedroom Rancho villa. 4-bedroom Aliso townhouses are AED 4.6M–5.2M and the 4-bedroom Rancho villa is AED 7.0M. *Indicative, subject to Nakheel's confirmation.</p></details>
+      <details><summary>What unit types and sizes are available?</summary><p>Aliso townhouses: 3-bedroom middle unit (G+1, ~2,329 sq ft covered on a ~2,178 sq ft plot), 4-bedroom corner Type 1 (G+1, ~2,672 sq ft on ~3,269 sq ft) and 4-bedroom corner Type 2 (G+2, ~3,115 sq ft on ~3,435 sq ft). Rancho villas: 4-bedroom (G+2, ~4,041 sq ft on ~5,158 sq ft) and 5-bedroom (G+2, ~4,921 sq ft on ~6,065 sq ft). Final layouts are confirmed at launch.</p></details>
       <details><summary>What is the payment plan?</summary><p>The expected plan is 60% during construction and 40% on handover: 10% on booking, then 10% in Apr 2027, Sep 2027, Feb 2028 and Jul 2028, 5% in Dec 2028 and May 2029, and 40% on handover (expected Oct 2030). The 4% DLD fee is paid separately on booking. Subject to Nakheel's confirmation.</p></details>
       <details><summary>Does buying here qualify for a UAE Golden Visa?</summary><p>Property purchases of AED 2M and above can qualify for the UAE 10-year Golden Visa, subject to the criteria in force when you apply. Our team can walk you through the process.</p></details>
       <details><summary>Where exactly is it located?</summary><p>In Jebel Ali, just below Palm Jebel Ali and close to Sheikh Zayed Road, Jebel Ali Port, JAFZA, Expo City Dubai and Al Maktoum International Airport (DWC). See the interactive map above for drive times.</p></details>
@@ -1528,6 +1656,31 @@ const DLD_FEE_PCT = 4;
     });
   };
 
+
+  /* ---------- floor plans ---------- */
+  let fpPlans = {};                       // unit id -> image item from images/palm-springs/floorplans/<id>.webp
+  const fpShow = id => {
+    const btn = $(`.fp-item[data-fp="${id}"]`);
+    if (!btn) return;
+    $$(".fp-item").forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
+    $("#fpTitle").textContent = btn.querySelector(".fp-name").textContent;
+    $("#fpSub").textContent = btn.querySelector(".fp-meta").textContent;
+    const cta = $("#fpCta");
+    cta.dataset.unit = btn.dataset.unit; cta.dataset.cta = "floorplan_" + id;
+    const plan = fpPlans[id], fig = $("#fpFig"), img = $("#fpImg");
+    fig.classList.toggle("has-plan", !!plan);
+    $("#fpLock").hidden = !!plan;
+    if (plan) { img.src = plan.src; img.alt = plan.alt; if (plan.w) { img.width = plan.w; img.height = plan.h; } }
+    else { img.src = "images/ps-floorplan-blur.webp"; img.alt = "Blurred floor plan preview: plan available on request"; }
+  };
+  $$(".fp-item").forEach(b => b.addEventListener("click", () => fpShow(b.dataset.fp)));
+  $$(".js-fp-open").forEach(a => a.addEventListener("click", () => fpShow(a.dataset.fp)));
+  $("#fpFig").addEventListener("click", () => {
+    const id = $(".fp-item[aria-pressed='true']")?.dataset.fp;
+    if (id && fpPlans[id]) lbOpen([{ ...fpPlans[id], caption: $("#fpTitle").textContent }], 0);
+  });
+  fpShow("th3-mid");
+
   /* ---------- gallery + lagoon designs ---------- */
   const designName = src => {
     const s = src.split("/").pop().replace(/\.[a-z0-9]+$/i, "").toLowerCase()
@@ -1566,7 +1719,8 @@ const DLD_FEE_PCT = 4;
   const renderLagoon = list => {
     const track = $("#lagoonTrack");
     if (!list.length) { $("#lagoonEmpty").hidden = false; track.hidden = true; return; }
-    $("#slNav").hidden = false; $("#lagoonCta").hidden = false;
+    $("#slNav").hidden = list.length < 2; $("#lagoonCta").hidden = false;
+    track.classList.toggle("single", list.length === 1);
     track.innerHTML = list.map((it, i) =>
       `<figure class="slide" data-i="${i}">${imgTag(it)}<figcaption class="meta"><strong>${it.caption}</strong><span class="ri">Representative imagery</span></figcaption></figure>`).join("");
     $$(".slide", track).forEach(s => s.addEventListener("click", () => lbOpen(list, +s.dataset.i)));
@@ -1585,6 +1739,8 @@ const DLD_FEE_PCT = 4;
       renderGallery(items);
       renderLagoon(lagoon);
       renderAerials(F.aerial || []);
+      (F.floorplans || []).forEach(it => { fpPlans[it.src.split("/").pop().replace(/\.[a-z0-9]+$/i, "")] = it; });
+      const cur = $(".fp-item[aria-pressed='true']"); if (cur) fpShow(cur.dataset.fp);
     })
     .catch(() => { renderGallery([]); renderLagoon([]); renderAerials([]); });
 })();

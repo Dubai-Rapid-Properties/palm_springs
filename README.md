@@ -39,6 +39,7 @@ Put images in `images/palm-springs/<folder>/`:
 | `townhouses/` | Townhouses |
 | `interiors/` | Interiors |
 | `amenities/` | Amenities |
+| `floorplans/` | Not in the gallery. Floor Plans section: name each file after its unit id: `th3-mid`, `th4-t1`, `th4-t2`, `v4`, `v5` (e.g. `floorplans/th3-mid.jpg`). Units without a file show a locked preview |
 | `aerial/` | All tab only. `location-map` and `location-aerial` are shown in the Location section instead |
 
 Because the site is plain static HTML, the gallery reads a manifest, `images/palm-springs/images.json`.
@@ -53,6 +54,9 @@ The script converts JPG/PNG to WebP (max 2000 px), records width/height (no layo
 Lagoon villa file names become design names: `lagoon-villa-modern-01.jpg` → "Modern".
 Original JPG/PNGs are moved to `images/palm-springs/_originals/` (ignored by git and not deployed). You can hand-edit `alt`/`caption` in `images.json`; the script keeps your edits.
 Empty folders show a "Coming at launch" panel with a register button.
+
+## Videos
+`videos/palm-springs-townhouse.mp4` and `videos/palm-springs-villa.mp4` (H.264, 720p, ~4.7 MB each, with poster images). They only download when a visitor presses play.
 
 ## 3. Lead form
 Fields: name, phone (with country code), email (optional), home type, buying for, consent, plus hidden `source_cta` (which button brought the lead) and UTM parameters.
