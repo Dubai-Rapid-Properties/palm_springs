@@ -136,7 +136,8 @@ img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .s169.B ul{margin-top:34px}
 .s169.B .pbox{margin-top:auto;background:var(--ink);color:#fff;padding:30px 34px;display:flex;justify-content:space-between;align-items:center}
 .s169.B .pbox span{font-size:22px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
-.s169.B .pbox strong{font-family:var(--serif);font-weight:400;font-size:50px;color:var(--or)}
+.s169.B .pbox strong{font-family:var(--serif);font-weight:400;font-size:44px;color:var(--or);white-space:nowrap}
+.s169.B .pbox{gap:24px}
 .s169.C .pair{height:100%}
 .s169.C h1{font-size:104px;margin:20px 0 30px}
 .s169.C .col .price{margin-top:auto;margin-bottom:34px}
@@ -161,6 +162,7 @@ img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .s45.B ul{margin-top:22px}
 .s45.B li{padding:16px 0}
 .B .map svg.map{margin:0;border:0}
+.eur{font-family:var(--sans);font-style:normal;font-size:.42em;letter-spacing:.02em;opacity:.82;margin-left:.45em;vertical-align:.32em;white-space:nowrap}
 .note{position:absolute;right:22px;bottom:16px;z-index:2;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)}
 .note.dk{color:var(--ink3)}
 </style>
@@ -226,17 +228,17 @@ A: () => `<img class="bg" src="${HERO}">
   <span class="eyebrow">Nakheel · Upcoming Launch</span>
   <h1>Palm Springs</h1>
   <p class="sub">Villas &amp; Townhouses · Right below Palm Jebel Ali</p>
-  <div class="price"><small>Expected from</small><strong>AED 3.8M*</strong></div>
+  <div class="price"><small>Starting from</small><strong>AED 3.8M*<em class="eur">≈ €925k</em></strong></div>
   <div class="row"><span class="cta">Register before launch ${arrow}</span></div>
-  <p class="fine" style="margin-top:22px">*Expected pricing, subject to change · Representative imagery</p>
+  <p class="fine" style="margin-top:22px">*Indicative, subject to change at launch · Representative imagery</p>
  </div>`,
 B: () => `<div class="pad"><div class="top">${LD}<span class="tag">Pre-launch</span></div>
   <span class="eyebrow" style="margin-top:46px;color:var(--or2)">Palm Springs by Nakheel</span>
   <h1>Right below <br>Palm Jebel Ali</h1>
   <div class="map">${MAP}</div>
-  <ul><li><span>Palm Jebel Ali</span><b>Next door</b></li><li><span>Sheikh Zayed Road</span><b>Direct access</b></li><li><span>Al Maktoum Airport (DWC)</span><b>~15 min</b></li></ul>
+  <ul><li><span>Sheikh Mohammed Bin Zayed Rd</span><b>~5 min</b></li><li><span>Palm Jebel Ali</span><b>~14 min</b></li><li><span>Al Maktoum Airport (DWC)</span><b>~20 min</b></li></ul>
   <div class="spacer"></div>
-  <div class="bar"><span>Villas &amp; Townhouses</span><strong>From AED 3.8M*</strong></div>
+  <div class="bar"><span>Villas &amp; Townhouses</span><strong>From AED 3.8M*<em class="eur">≈ €925k</em></strong></div>
  </div>`,
 C: () => `<div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div>
   <span class="eyebrow" style="margin-top:44px">Palm Springs by Nakheel</span>
@@ -245,19 +247,19 @@ C: () => `<div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</s
    <figure><img src="${IMG}ps-townhouses.webp"><figcaption><small>Townhouses</small><strong>3 &amp; 4 BR</strong></figcaption></figure>
    <figure><img src="${IMG}ps-villa.webp"><figcaption><small>Standalone villas</small><strong>4 &amp; 5 BR</strong></figcaption></figure>
   </div>
-  <div class="foot"><div class="price"><small>Expected from</small><strong>AED 3.8M*</strong></div><span class="cta">Register ${arrow}</span></div>
+  <div class="foot"><div class="price"><small>Starting from</small><strong>AED 3.8M*<em class="eur">≈ €925k</em></strong></div><span class="cta">Register ${arrow}</span></div>
  </div><span class="note">Representative imagery</span>`,
 D: () => `<div class="pad"><div class="top">${LD}<span class="tag">Pre-launch</span></div>
   <span class="eyebrow" style="margin-top:44px;color:var(--or2)">Palm Springs by Nakheel</span>
   <h1>Get the brochure &amp; floor plans first</h1>
   <div class="img"><img src="${IMG}ps-brochure.webp"></div>
   <ul><li>Prices &amp; payment plan before launch</li><li>Priority on unit, plot &amp; orientation</li><li>Free, no obligation</li></ul>
-  <div class="row"><span class="cta">Register now ${arrow}</span><div class="price" style="border-color:var(--or2)"><small style="color:var(--ink3)">From</small><strong style="font-size:56px">AED 3.8M*</strong></div></div>
+  <div class="row"><span class="cta">Register now ${arrow}</span><div class="price" style="border-color:var(--or2)"><small style="color:var(--ink3)">From</small><strong style="font-size:56px">AED 3.8M*<em class="eur">≈ €925k</em></strong></div></div>
  </div><span class="note dk">Representative imagery</span>`,
 U1: () => `<img class="bg" src="${TH}"><div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div><div class="spacer"></div>
-  <small>Townhouses</small><h1>3 &amp; 4 Bedrooms</h1><p>Expected from AED 3.8M* · ~2,000 sqft</p></div><span class="note">Representative imagery</span>`,
+  <small>Townhouses</small><h1>3 &amp; 4 Bedrooms</h1><p>Starting from AED 3.8M* (≈ €925k) · 2,326 sq ft</p></div><span class="note">Representative imagery</span>`,
 U2: () => `<img class="bg" src="${HQ ? "hq-villa-sq.png" : IMG + "ps-villa.webp"}"><div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div><div class="spacer"></div>
-  <small>Standalone villas</small><h1>4 &amp; 5 Bedrooms</h1><p>Private pools · up to ~AED 9M*</p></div><span class="note">Representative imagery</span>`,
+  <small>Standalone villas</small><h1>4 &amp; 5 Bedrooms</h1><p>~4,041–4,921 sq ft · Price on request</p></div><span class="note">Representative imagery</span>`,
 U3: () => `<img class="bg" src="${HQ ? "hq-interior.png" : IMG + "ps-interior.webp"}"><div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div><div class="spacer"></div>
   <small>The lifestyle</small><h1>Indoor–outdoor living</h1><p>Contemporary homes by Nakheel</p></div><span class="note">Representative imagery</span>`,
 E: () => `<div class="pad">${LW}<div class="spacer"></div>
@@ -273,15 +275,15 @@ B: () => `<div class="pad"><div class="top">${LD}<span class="tag">Pre-launch</s
   <div class="grid2"><div class="col">
    <span class="eyebrow" style="color:var(--or2)">Palm Springs by Nakheel</span>
    <h1 style="margin-top:20px">Right below<br>Palm Jebel Ali</h1>
-   <ul><li><span>Palm Jebel Ali</span><b>Next door</b></li><li><span>Sheikh Zayed Road</span><b>Direct access</b></li><li><span>Al Maktoum Airport (DWC)</span><b>~15 min</b></li></ul>
-   <div class="pbox"><span>Villas &amp; Townhouses</span><strong>From AED 3.8M*</strong></div>
+   <ul><li><span>Sheikh Mohammed Bin Zayed Rd</span><b>~5 min</b></li><li><span>Palm Jebel Ali</span><b>~14 min</b></li><li><span>Al Maktoum Airport (DWC)</span><b>~20 min</b></li></ul>
+   <div class="pbox"><span>Villas &amp; Townhouses</span><strong>From AED 3.8M*<em class="eur">≈ €925k</em></strong></div>
   </div><div class="map">${MAP}</div></div></div>`,
 C: () => `<div class="pad"><div class="top">${LW}<span class="tag">Pre-launch</span></div>
   <div class="grid2" style="grid-template-columns:.8fr 1.4fr"><div class="col">
    <span class="eyebrow">Palm Springs by Nakheel</span>
    <h1>Townhouses &amp; Villas</h1>
    <p style="font-size:30px;color:rgba(255,255,255,.85);line-height:1.4">Right below Palm Jebel Ali, on Sheikh Zayed Road.</p>
-   <div class="price"><small>Expected from</small><strong>AED 3.8M*</strong></div>
+   <div class="price"><small>Starting from</small><strong>AED 3.8M*<em class="eur">≈ €925k</em></strong></div>
    <div><span class="cta">Register before launch ${arrow}</span></div>
   </div><div class="pair">
    <figure><img src="${IMG}ps-townhouses.webp"><figcaption><small>Townhouses</small><strong>3 &amp; 4 BR</strong></figcaption></figure>
@@ -292,7 +294,7 @@ D: () => `<div class="pad"><div class="top">${LD}<span class="tag">Pre-launch</s
    <span class="eyebrow" style="color:var(--or2)">Palm Springs by Nakheel</span>
    <h1 style="margin-top:20px">Get the brochure &amp; floor plans first</h1>
    <ul><li>Prices &amp; payment plan before launch</li><li>Priority on unit, plot &amp; orientation</li><li>Free, no obligation</li></ul>
-   <div class="row" style="margin-top:auto"><span class="cta">Register now ${arrow}</span><div class="price" style="border-color:var(--or2)"><small style="color:var(--ink3)">From</small><strong style="font-size:56px">AED 3.8M*</strong></div></div>
+   <div class="row" style="margin-top:auto"><span class="cta">Register now ${arrow}</span><div class="price" style="border-color:var(--or2)"><small style="color:var(--ink3)">From</small><strong style="font-size:56px">AED 3.8M*<em class="eur">≈ €925k</em></strong></div></div>
   </div><div class="img"><img src="${IMG}ps-brochure.webp"></div></div></div><span class="note dk">Representative imagery</span>`
 };
 const c = document.getElementById("c");

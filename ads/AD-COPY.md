@@ -13,18 +13,19 @@
 > Villas & townhouses right below Palm Jebel Ali, on Sheikh Zayed Road.
 >
 > 🏡 3 & 4 BR Townhouses | 4 & 5 BR Villas
-> 💰 Expected from AED 3.8M
-> 📍 ~15 min to Al Maktoum Airport (DWC)
+> 💰 Starting from AED 3.8M* (≈ €925k)
+> 📐 Townhouses from 2,326 sq ft
+> 📍 ~20 min to Al Maktoum Airport (DWC)
 >
 > Register now to get the brochure, floor plans and launch prices before the public release.
 
 **B: Investor angle**
-> Nakheel villas from AED 3.8M, next to Palm Jebel Ali.
+> Nakheel townhouses from AED 3.8M (≈ €925k), just below Palm Jebel Ali.
 > Palm Springs sits between Jebel Ali Port, JAFZA, Expo City and the new AED 128BN Al Maktoum Airport, in the middle of Dubai's fastest-growing corridor.
 > Pre-launch registration is open. Be first in line for launch pricing.
 
 **C: Short (Stories / Reels)**
-> Palm Springs by Nakheel 🌴 Villas & townhouses from AED 3.8M. Register before launch 👇
+> Palm Springs by Nakheel 🌴 Villas & townhouses starting from AED 3.8M (≈ €925k). Register before launch 👇
 
 ## Headlines (max ~40 characters)
 - Palm Springs by Nakheel, from AED 3.8M
@@ -61,13 +62,15 @@ Files: `hq/carousel-4x5/carousel-4x5-1.jpg` to `-6.jpg` (2160×2700). Upload the
 >
 > 🏡 3 & 4 BR Townhouses
 > 🏡 4 & 5 BR Standalone Villas
-> 💰 Expected from AED 3.8M*
-> 📍 ~15 min to Al Maktoum Airport (DWC)
+> 💰 Starting from AED 3.8M* (≈ €925k)
+> 📐 Townhouses from 2,326 sq ft · Villas up to ~4,921 sq ft
+> 💳 10% on booking · 50% during construction · 40% on handover*
+> 📍 ~20 min to Al Maktoum Airport (DWC)
 >
 > Want the brochure, floor plans and launch prices before anyone else?
 > 📲 DM us or WhatsApp +971 56 777 0272
 > 🔗 Link in bio
 >
-> *Expected pricing, subject to change. Imagery is representative.
+> *Indicative, subject to change at launch. Imagery is representative.
 >
 > #PalmSprings #Nakheel #PalmJebelAli #DubaiRealEstate #DubaiVillas #DubaiTownhouses #OffPlanDubai #DubaiProperty #DubaiInvestment #DRP
